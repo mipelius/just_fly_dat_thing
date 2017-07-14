@@ -95,4 +95,13 @@ public class Player : MonoBehaviour {
 			text1.text = "SHOCK, POWER: " + shockPower;
 		}
 	}
+
+	private void OnTriggerEnter2D (Collider2D other) {
+		if (other.tag == "exit") {
+			UnityEngine.SceneManagement.Scene scene = 
+				UnityEngine.SceneManagement.SceneManager.GetActiveScene ();
+			
+			UnityEngine.SceneManagement.SceneManager.LoadScene(scene.name);
+		} // else if (other.tag == "gold") { ... }			
+	}
 }
