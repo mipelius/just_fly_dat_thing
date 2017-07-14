@@ -1,0 +1,65 @@
+Aikataulusuunnitelma
+--------------------
+
+PE 14.8.
+
+- Projekti gittiin
+- Aloitus- / pelivalikko
+- GameManager
+- Kolikoiden kerääminen
+- Kentän aloitus ja lopetus
+- Yksinkertainen esimerkki kentästä
+
+----------------------
+
+MA 17.8.
+
+- Aluksen törmäily
+- UI / pisteet
+
+TI 18.8.
+
+- Trigger -> ovi auki
+- Kuula
+
+KE -----
+
+- kilpailussa vaadittavat ominaisuudet kuntoon
+
+TO 19.8.
+
+- kilpailussa vaadittavat ominaisuudet kuntoon
+
+PE 20.8.
+
+- ?
+
+La 21.8. 
+
+- ?
+
+SU 22.8.
+
+- ?
+
+----------------------
+
+MA 24.8.
+
+Musiikit
+
+TI 25.8.
+
+Äänitehosteet / grafiikan parantelua
+
+KE 26.8.
+
+Kääntäminen / videon työstöä
+
+TO 27.8.
+
+Kääntäminen / videon työstöä
+
+PE 28.8.
+
+Pelin lähetys kilpailuun!

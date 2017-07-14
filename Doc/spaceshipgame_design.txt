@@ -1,0 +1,35 @@
+Spaceship-peli, pelisuunnitelma
+-------------------------------
+
+* IDEA:
+
+- Useita kenttiä
+- Tehtävänä läpäistä kenttä keräämällä kaikki kolikot ja lentämällä pisteestä A pisteeseen B
+- Matkan varrella 2D-fysiikkaan perustuvia esteitä
+- Liian kova törmäily hajottaa aluksen, jolloin kenttä alkaa alusta.
+
+* OMINAISUUKSIA:
+
+- Aluksella voi 
+	-> lentää
+	-> kantaa palikoita (huom. alusta tällöin raskaampi liikuttaa)
+	
+	ja ehkä
+		-> tiputtaa pommeja
+		-> ampua
+	
+		----> näillä voi vaikuttaa kentän muihin objekteihin
+	
+- Kentän perusrunko koostuu staattisista palikoista
+
+- Kentän dynaamisia objekteja ovat
+	-> palikat, joita voi liikuttaa
+	-> putoavat palikat, jotka hajoavat osutessaan maahan, ja joita syntyy
+	   asetetussa lähtöpisteessä jatkuvasti lisää
+	-> paikallaan pyörivät palikat
+
+- Kentässä on nappuloita (trigger)
+	-> joita painamalla voi aiheuttaa johonkin dynaamiseen objektiin voiman 
+	-> jos nappulaa painaa jatkuvasti, myös voima vaikuttaa jatkuvasti
+	
+	----> esim. ovimekaniikka yms
