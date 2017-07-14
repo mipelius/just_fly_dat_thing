@@ -22,15 +22,12 @@ public class Player : MonoBehaviour {
 	private float shockTimeStamp = 0;
 	private float shockPower = 0;
 
-	void Awake () {
-		text1 = GameObject.Find("DebugText1").GetComponent<Text>();
-		text2 = GameObject.Find("DebugText2").GetComponent<Text>();
-		text3 = GameObject.Find("DebugText3").GetComponent<Text>();
-	}
-
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
+		text1 = GameObject.Find("DebugText1").GetComponent<Text>();
+		text2 = GameObject.Find("DebugText2").GetComponent<Text>();
+		text3 = GameObject.Find("DebugText3").GetComponent<Text>();
 	}
 	
 	// Update is called once per frame
