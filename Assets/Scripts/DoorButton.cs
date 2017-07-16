@@ -11,8 +11,9 @@ public class DoorButton : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
+	void OnTriggerStay2D(Collider2D other) {
 		TriggerManager.instance.trigger(triggerType);
+		Debug.Log ("Hep");
 	}
 
 	void OnTriggerExit2D(Collider2D other) {

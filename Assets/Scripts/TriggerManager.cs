@@ -8,30 +8,30 @@ public class TriggerManager : MonoBehaviour {
 
 	public enum triggerType { yellow, green, purple };
 
-	private List<Door> doors;
+	private List<TriggerBehaviour> triggerBehaviours;
 
 	void Awake () {
 		if (instance == null) {
 			instance = this;
-			doors = new List<Door> ();
+			triggerBehaviours = new List<TriggerBehaviour> ();
 		}
 		else if (instance != this)
 			Destroy(gameObject);
 	}
 
-	public void addDoor(Door door) {
-		doors.Add (door);
+	public void addBehaviour(TriggerBehaviour triggerBehaviour) {
+		triggerBehaviours.Add (triggerBehaviour);
 	}
 
 	public void trigger(triggerType triggerType) {
-		foreach (Door door in doors) {
-			if (door.triggerType == triggerType)
-				door.trigger = true;
+		foreach (TriggerBehaviour triggerBehaviour in triggerBehaviours) {
+			if (triggerBehaviour.triggerType == triggerType)
+				triggerBehaviour.trigger = true;
 		}
 	}
 
 	public void untrigger(triggerType triggerType) {
-		foreach (Door door in doors) {
+		foreach (TriggerBehaviour door in triggerBehaviours) {
 			if (door.triggerType == triggerType)
 				door.trigger = false;
 		}
