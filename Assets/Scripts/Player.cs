@@ -13,10 +13,6 @@ public class Player : MonoBehaviour {
 	public float shockTriggerVelocity;
 	public float shockFactor;
 
-	private Text text1;
-	private Text text2;
-	private Text text3;
-
 	private Rigidbody2D rb;
 
 	private float shockTimeStamp = 0;
@@ -25,17 +21,24 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
-		text1 = GameObject.Find("DebugText1").GetComponent<Text>();
-		text2 = GameObject.Find("DebugText2").GetComponent<Text>();
-		text3 = GameObject.Find("DebugText3").GetComponent<Text>();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate  () {
-		float rotationInput = Input.GetAxisRaw ("Horizontal");
+		bool inputLeft = Input.GetKey (KeyCode.LeftArrow);
+		bool inputRight = Input.GetKey (KeyCode.RightArrow);
+
+		float rotationInput = 0;
+
+		if (inputLeft)
+			rotationInput -= 1;
+		if (inputRight)
+			rotationInput += 1;
+		
 		Rotate (rotationInput);
 
-		float accelerationInput = Input.GetAxisRaw ("Vertical");
+		float accelerationInput = Input.GetKey(KeyCode.UpArrow) ? 1 : 0;
+
 		Accelerate (accelerationInput);
 	}
 
@@ -60,16 +63,12 @@ public class Player : MonoBehaviour {
 		torqueShockFactor = Mathf.Pow (torqueShockFactor, shockPower);
 
 		if (torqueShockFactor > 1) {
-			torqueShockFactor = 1;
-			text1.text = "NO SHOCK";
+			torqueShockFactor = 1;		
 		}
 
 		float actualTorque = torque * torqueShockFactor;
 
-		rb.AddTorque (actualTorque);
-
-		text2.text = "AngularVelocity: " 	+ rb.angularVelocity;
-		text3.text = "Torgue: " 			+ torque;				
+		rb.AddTorque (actualTorque);		
 	}
 
 	private void Accelerate (float accelerationInput) {
@@ -91,8 +90,6 @@ public class Player : MonoBehaviour {
 		if (collision.relativeVelocity.magnitude > shockTriggerVelocity) {
 			shockTimeStamp = Time.time;
 			shockPower = collision.relativeVelocity.magnitude * shockFactor;
-
-			text1.text = "SHOCK, POWER: " + shockPower;
 		}
 	}
 

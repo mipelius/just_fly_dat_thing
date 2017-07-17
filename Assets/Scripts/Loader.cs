@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Loader : MonoBehaviour {
 
-	public bool developmentMode;
+	public bool levelDevelopmentMode;
 
 	public GameObject debugCanvas;
 	public GameObject eventSystem;
 
 	void Awake () {
-		if (developmentMode) {			
+		if (levelDevelopmentMode) {			
 			debugCanvas = Instantiate (debugCanvas); DontDestroyOnLoad (debugCanvas);
 			eventSystem = Instantiate (eventSystem); DontDestroyOnLoad (eventSystem);
 		} else {
-			
+			UnityEngine.SceneManagement.SceneManager.LoadScene ("ScreenMain");
 		}
 	}
 }

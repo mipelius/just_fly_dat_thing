@@ -160,10 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5cf1b117edb466b8c2df703019c5c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  developmentMode: 1
-  basicLight: {fileID: 1095072754361618, guid: 966965b3588e342509c14ca599ed7107, type: 2}
+  levelDevelopmentMode: 1
   debugCanvas: {fileID: 1168284744373978, guid: ea07d221c068b4de6a79e9c659732c1a,
     type: 2}
   eventSystem: {fileID: 1275880603497306, guid: 851bb886fdc92477cb70cad2f032d45a,
     type: 2}
-  mainCamera: {fileID: 1222006999701962, guid: 0c80f092eaf3b43608f698b3c5ccbef7, type: 2}
