@@ -1,7 +1,7 @@
 Aikataulusuunnitelma
 --------------------
 
-PE 14.8.
+PE 14.7.
 
 - Projekti gittiin
 - Aloitus- / pelivalikko
@@ -10,35 +10,38 @@ PE 14.8.
 - Kentän aloitus ja lopetus
 - Yksinkertainen esimerkki kentästä
 
+SU 16.7.
+
+- Trigger -> ovi auki
+- Kuula
+
 ----------------------
 
-MA 17.8.
+MA 17.7.
 
 - Aluksen törmäily
 - UI / pisteet
 
-TI 18.8.
+TI 18.7.
 
-- Trigger -> ovi auki
-- Kuula
 
 KE -----
 
 - kilpailussa vaadittavat ominaisuudet kuntoon
 
-TO 19.8.
+TO 19.7.
 
 - kilpailussa vaadittavat ominaisuudet kuntoon
 
-PE 20.8.
+PE 20.7.
 
 - ?
 
-La 21.8. 
+La 21.7. 
 
 - ?
 
-SU 22.8.
+SU 22.7.
 
 - ?
 
