@@ -23,10 +23,9 @@ GameObject:
   - component: {fileID: 50809449067675028}
   - component: {fileID: 60661639340623888}
   - component: {fileID: 114168651944451688}
-  - component: {fileID: 114395004035838828}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,17 +128,6 @@ MonoBehaviour:
   rotationVelocity: 300
   accelerationForce: 400
   damageThreshold: 20
---- !u!114 &114395004035838828
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1629953521453574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8038e4fe880bc4bca82505aecdc8de13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212809401960178270
 SpriteRenderer:
   m_ObjectHideFlags: 1
