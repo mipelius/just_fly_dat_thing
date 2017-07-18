@@ -127,7 +127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationVelocity: 300
   accelerationForce: 400
-  damageThreshold: 20
+  damageThreshold: 10
+  damageFactor: 1
+  health: 400
 --- !u!212 &212809401960178270
 SpriteRenderer:
   m_ObjectHideFlags: 1

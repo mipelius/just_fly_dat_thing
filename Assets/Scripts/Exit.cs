@@ -26,10 +26,7 @@ public class Exit : MonoBehaviour {
 	}
 	private void OnTriggerEnter2D (Collider2D other) {
 		if (other.tag == "Player" && canUse) {
-			UnityEngine.SceneManagement.Scene scene = 
-				UnityEngine.SceneManagement.SceneManager.GetActiveScene ();
-
-			UnityEngine.SceneManagement.SceneManager.LoadScene(scene.name);
+			UILevelManager.instance.Restart ();
 		}			
 	}
 }

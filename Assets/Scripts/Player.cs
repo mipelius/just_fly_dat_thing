@@ -8,17 +8,17 @@ public class Player : MonoBehaviour {
 	public float rotationVelocity;
 	public float accelerationForce;
 	public float damageThreshold;
+	public float damageFactor;
+
+	public float health;
 
 	private Rigidbody2D rb;
-
-	private float shockTimeStamp = 0;
-	private float shockPower = 0;
-
-	private bool isColliding = false;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
+
+		UILevelManager.instance.SetPlayer (this);
 	}
 	
 	// Update is called once per frame
@@ -38,6 +38,7 @@ public class Player : MonoBehaviour {
 		float accelerationInput = Input.GetKey(KeyCode.UpArrow) ? 1 : 0;
 
 		Accelerate (accelerationInput);
+
 	}
 
 	private void Rotate (float rotationInput) {
@@ -62,8 +63,13 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.relativeVelocity.magnitude > damageThreshold) {
-			// damage
+		float collisionMagnitude = collision.relativeVelocity.magnitude;
+
+		if (collisionMagnitude > damageThreshold) {
+			health -= damageFactor * collisionMagnitude;
+			if (health <= 0) {
+				UILevelManager.instance.Restart ();
+			}
 		}
 	}
 }
