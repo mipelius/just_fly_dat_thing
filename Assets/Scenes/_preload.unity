@@ -163,5 +163,3 @@ MonoBehaviour:
   levelDevelopmentMode: 1
   debugCanvas: {fileID: 1168284744373978, guid: ea07d221c068b4de6a79e9c659732c1a,
     type: 2}
-  eventSystem: {fileID: 1275880603497306, guid: 851bb886fdc92477cb70cad2f032d45a,
-    type: 2}
