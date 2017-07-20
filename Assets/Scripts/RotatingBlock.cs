@@ -17,7 +17,7 @@ public class RotatingBlock : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {		
-		if (rb.angularVelocity < maxAngularVelocity) 
+		if (Mathf.Abs(rb.angularVelocity) < maxAngularVelocity) 
 			rb.AddTorque (torque);
 	}
 }

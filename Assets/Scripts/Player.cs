@@ -12,12 +12,16 @@ public class Player : MonoBehaviour {
 
 	public float health;
 
+	public GameObject bomb;
+
 	private Rigidbody2D rb;
+	private PolygonCollider2D polygonCollider;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
-
+		polygonCollider = GetComponent<PolygonCollider2D> ();
+			
 		UILevelManager.instance.SetPlayer (this);
 	}
 	
@@ -41,6 +45,12 @@ public class Player : MonoBehaviour {
 
 	}
 
+	void Update() {
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			DropBomb ();	
+		}
+	}
+
 	private void Rotate (float rotationInput) {
 		if (rotationInput == 0) {
 			rb.angularVelocity = 0;
@@ -59,6 +69,43 @@ public class Player : MonoBehaviour {
 		               );
 	
 		rb.AddForce (force);
+	}
+
+	private void DropBomb() {
+		float angle = (rb.rotation + 180) / 360 * 2 * Mathf.PI;
+
+		Vector2 transition = new Vector2 (
+			Mathf.Cos (angle),
+			Mathf.Sin (angle)
+		);
+
+		transition *= 1.2f;
+
+		this.polygonCollider.enabled = false;
+		RaycastHit2D hit = Physics2D.Linecast (rb.position, rb.position + transition);
+		this.polygonCollider.enabled = true;
+
+		if (hit.transform != null) {
+			rb.position = rb.position - transition / 3;
+		}
+
+		Vector2 position = rb.position + transition * 1f;
+
+		Quaternion rotation = transform.rotation;
+		//rotation.eulerAngles += new Vector3 (0, 0, 180);
+
+		GameObject currentBomb = Instantiate (
+			                         bomb, 
+			                         new Vector3 (position.x, position.y, -2), 
+									 rotation
+		                         );
+
+		Rigidbody2D bombRb = currentBomb.GetComponent<Rigidbody2D> ();
+
+		if (bombRb != null) {
+			bombRb.velocity = rb.velocity + transition * 2;
+			bombRb.AddForce (transition * 2000 + new Vector2 (0, -2000));			
+		}		
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)

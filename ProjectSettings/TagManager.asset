@@ -7,6 +7,7 @@ TagManager:
   - wall
   - exit
   - gold
+  - explosive
   layers:
   - Default
   - TransparentFX

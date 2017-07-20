@@ -6,11 +6,10 @@ public class Scroll : MonoBehaviour {
 
 	public float speed = 0.5f;
 
-	private MeshRenderer renderer;
+	private MeshRenderer meshRenderer;
 
-	// Use this for initialization
 	void Start () {
-		renderer = GetComponent<MeshRenderer> ();
+		meshRenderer = GetComponent<MeshRenderer> ();
 //		transform.localScale = new Vector3 (
 //			Screen.currentResolution.height,
 //			Screen.currentResolution.width,
@@ -25,6 +24,6 @@ public class Scroll : MonoBehaviour {
 
 		Vector2 offset = cameraPosition2D * speed;
 
-		renderer.material.mainTextureOffset = offset;
+		meshRenderer.material.mainTextureOffset = offset;
 	}
 }
