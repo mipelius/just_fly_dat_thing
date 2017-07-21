@@ -55,14 +55,14 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 10
-  m_LinearDrag: 0.2
+  m_LinearDrag: 0.1
   m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!60 &60661639340623888
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -125,10 +125,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1dec21421dae40e1840722e2ef34a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationVelocity: 300
+  rotationVelocity: 280
   accelerationForce: 400
   damageThreshold: 10
   damageFactor: 1
+  velocityLimit: 20
+  bombs: 0
   health: 400
   bomb: {fileID: 1351820238977542, guid: c2f5bbf3df9fc422aaf9facabd8ce9f7, type: 2}
 --- !u!212 &212809401960178270

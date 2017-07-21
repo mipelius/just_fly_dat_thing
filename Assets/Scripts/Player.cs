@@ -10,6 +10,8 @@ public class Player : MonoBehaviour {
 	public float damageThreshold;
 	public float damageFactor;
 
+	public float velocityLimit;
+
 	public int bombs;
 
 	public float health;
@@ -28,8 +30,7 @@ public class Player : MonoBehaviour {
 			
 		UILevelManager.instance.SetPlayer (this);
 	}
-	
-	// Update is called once per frame
+
 	void FixedUpdate  () {
 		bool inputLeft = Input.GetKey (KeyCode.LeftArrow);
 		bool inputRight = Input.GetKey (KeyCode.RightArrow);
@@ -47,6 +48,17 @@ public class Player : MonoBehaviour {
 
 		Accelerate (accelerationInput);
 
+		Debug.Log (rb.velocity.magnitude);
+
+		LimitVelocity ();
+	}
+
+	void LimitVelocity() {
+		float overSpeed = rb.velocity.magnitude - velocityLimit;
+
+		if (overSpeed > 0) {			
+			rb.AddForce (-rb.velocity.normalized * accelerationForce);
+		}
 	}
 
 	void Update() {
@@ -71,14 +83,19 @@ public class Player : MonoBehaviour {
 
 	private void Accelerate (float accelerationInput) {
 		float accAmount = accelerationInput * accelerationForce;
-		float accAngle = (transform.rotation.eulerAngles.z / 360) * Mathf.PI * 2;
 
-		Vector2 force = new Vector2 (
-			               Mathf.Cos (accAngle) * accAmount,
-			               Mathf.Sin (accAngle) * accAmount			               
-		               );
-	
+		Vector2 force = NormalizedDirectionVector() * accAmount;
+
 		rb.AddForce (force);
+	}
+
+	private Vector2 NormalizedDirectionVector() {
+		float angle = (transform.rotation.eulerAngles.z / 360) * Mathf.PI * 2;
+
+		return new Vector2 (
+			Mathf.Cos (angle),
+			Mathf.Sin (angle)
+		);
 	}
 
 	private void DropBomb() {

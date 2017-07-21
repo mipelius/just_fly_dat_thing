@@ -12,5 +12,5 @@ EditorBuildSettings:
     path: Assets/Scenes/ScreenMain.unity
     guid: 3a1a42db38fcd4a0e855de2f2886ae48
   - enabled: 1
-    path: Assets/Scenes/MiikanTestiLevel.unity
+    path: Assets/Scenes/Examples/ExampleFull.unity
     guid: bf18e522b88474f2ab6edb16ae4cf026
