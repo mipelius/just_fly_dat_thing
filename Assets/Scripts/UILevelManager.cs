@@ -42,7 +42,7 @@ public class UILevelManager : MonoBehaviour {
 
 	private void UpdateHealthUI() {
 		if (player != null) {
-			healthBar.offsetMax = new Vector2(player.health + healthBar.offsetMin.x + 1, healthBar.offsetMax.y);
+			healthBar.offsetMax = new Vector2(player.health + healthBar.offsetMin.x, healthBar.offsetMax.y);
 		}
 	}
 
