@@ -13,7 +13,6 @@ public class DoorButton : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other) {
 		TriggerManager.instance.trigger(triggerType);
-		Debug.Log ("Hep");
 	}
 
 	void OnTriggerExit2D(Collider2D other) {

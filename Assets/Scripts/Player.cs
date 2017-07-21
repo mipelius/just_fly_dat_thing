@@ -19,6 +19,8 @@ public class Player : MonoBehaviour {
 	private Rigidbody2D rb;
 	private PolygonCollider2D polygonCollider;
 
+	bool isColliding = false;
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
@@ -57,11 +59,14 @@ public class Player : MonoBehaviour {
 	}
 
 	private void Rotate (float rotationInput) {
-		if (rotationInput == 0) {
-			rb.angularVelocity = 0;
-		} else if (Mathf.Abs(rb.angularVelocity) < rotationVelocity) {
-			rb.angularVelocity = -rotationInput * rotationVelocity;
+		if (rotationInput == 0 && isColliding) {			
+			rb.freezeRotation = false;
 		}
+		else {
+			rb.freezeRotation = true;
+			Vector3 rotation = new Vector3 (0, 0, -rotationInput) * rotationVelocity * Time.deltaTime;
+			transform.Rotate (rotation);
+		}			
 	}
 
 	private void Accelerate (float accelerationInput) {
@@ -128,6 +133,14 @@ public class Player : MonoBehaviour {
 			if (health <= 0) {
 				UILevelManager.instance.Restart ();
 			}
-		}
+		}			
+	}
+
+	void OnCollisionStay2D(Collision2D collision) {
+		isColliding = true;
+	}
+
+	void OnCollisionExit2D(Collision2D collision) {
+		isColliding = false;
 	}
 }
