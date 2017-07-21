@@ -9,6 +9,8 @@ public class Bomb : MonoBehaviour {
 
 	public float activationDelay;
 
+	public GameObject explosion;
+
 	private float awakeTimeStamp;
 
 	private Rigidbody2D rb;
@@ -50,11 +52,16 @@ public class Bomb : MonoBehaviour {
 
 			if (collider.tag == "explosive") {
 				Bomb otherBomb = collider.GetComponent<Bomb> ();
-				if (otherBomb != null) {
-					otherBomb.Explode ();
+				if (otherBomb != null) {					
+					if ((otherBomb.transform.position - transform.position).magnitude > explosionRange / 2) {
+						otherBomb.Explode ();
+					}
 				}
 			}
 		}
+
+		GameObject exp = Instantiate (explosion, this.transform.position, Quaternion.identity);
+		exp.transform.localScale *= 3;
 
 		Destroy (this.gameObject);
 	}

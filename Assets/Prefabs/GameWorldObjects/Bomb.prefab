@@ -54,7 +54,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 20
+  m_Mass: 40
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -114,7 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionRange: 10
   explosionForce: 20000
-  activationDelay: 0.2
+  activationDelay: 0.5
+  explosion: {fileID: 1990463467326792, guid: da06f3ccabec947048680c22720e5f7a, type: 2}
 --- !u!212 &212202296278485922
 SpriteRenderer:
   m_ObjectHideFlags: 1
