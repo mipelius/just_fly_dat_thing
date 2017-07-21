@@ -8,7 +8,7 @@ public class CameraBehaviour : MonoBehaviour {
 
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
 		if (playerToFollow != null) {
 			transform.position = new Vector3 (
 				playerToFollow.transform.position.x,
