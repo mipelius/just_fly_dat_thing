@@ -18,16 +18,22 @@ public class Player : MonoBehaviour {
 
 	public GameObject bomb;
 
+	public GameObject explosion;
+
 	private Rigidbody2D rb;
 	private PolygonCollider2D polygonCollider;
+	private SpriteRenderer spriteRenderer;
 
-	bool isColliding = false;
+	private bool isAlive = true;
+
+	private bool isColliding = false;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 		polygonCollider = GetComponent<PolygonCollider2D> ();
-			
+		spriteRenderer = GetComponent<SpriteRenderer> ();
+
 		UILevelManager.instance.SetPlayer (this);
 	}
 
@@ -48,8 +54,6 @@ public class Player : MonoBehaviour {
 
 		Accelerate (accelerationInput);
 
-		Debug.Log (rb.velocity.magnitude);
-
 		LimitVelocity ();
 	}
 
@@ -67,6 +71,18 @@ public class Player : MonoBehaviour {
 				DropBomb ();
 				bombs--;
 			}
+		}
+
+		if (health <= 0 && isAlive) {
+			isAlive = false;
+
+			spriteRenderer.enabled = false;
+			rb.simulated = false;
+
+			GameObject exp = Instantiate (explosion, transform.position, Quaternion.identity);
+			exp.transform.localScale *= 8;
+
+			StartCoroutine ("Die");
 		}
 	}
 
@@ -119,7 +135,6 @@ public class Player : MonoBehaviour {
 		Vector2 position = rb.position + transition * 1f;
 
 		Quaternion rotation = transform.rotation;
-		//rotation.eulerAngles += new Vector3 (0, 0, 180);
 
 		GameObject currentBomb = Instantiate (
 			                         bomb, 
@@ -148,7 +163,7 @@ public class Player : MonoBehaviour {
 		if (collisionMagnitude > damageThreshold) {
 			health -= damageFactor * collisionMagnitude;
 			if (health <= 0) {
-				UILevelManager.instance.Restart ();
+				health = 0;
 			}
 		}			
 	}
@@ -159,5 +174,11 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionExit2D(Collision2D collision) {
 		isColliding = false;
+	}
+
+	IEnumerator Die() {
+		yield return new WaitForSeconds(3);
+
+		UILevelManager.instance.Restart ();
 	}
 }

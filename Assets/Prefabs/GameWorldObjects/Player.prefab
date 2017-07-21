@@ -133,6 +133,7 @@ MonoBehaviour:
   bombs: 0
   health: 400
   bomb: {fileID: 1351820238977542, guid: c2f5bbf3df9fc422aaf9facabd8ce9f7, type: 2}
+  explosion: {fileID: 1990463467326792, guid: da06f3ccabec947048680c22720e5f7a, type: 2}
 --- !u!212 &212809401960178270
 SpriteRenderer:
   m_ObjectHideFlags: 1

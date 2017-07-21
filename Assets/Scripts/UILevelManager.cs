@@ -86,7 +86,7 @@ public class UILevelManager : MonoBehaviour {
 		this.player = player;
 	}
 
-	public void Restart () {
+	public void Restart () {		
 		UnityEngine.SceneManagement.Scene scene = 
 			UnityEngine.SceneManagement.SceneManager.GetActiveScene ();
 
