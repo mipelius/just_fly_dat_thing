@@ -10,6 +10,9 @@ public class UILevelManager : MonoBehaviour {
 	public RectTransform healthBar;
 	public GameObject bombPanel;
 	public GameObject bombPanelText;
+	public GameObject goldPanel;
+	public GameObject goldPanelText;
+	public GameObject exitPanel;
 
 	private Player player;
 
@@ -18,6 +21,8 @@ public class UILevelManager : MonoBehaviour {
 			instance = this;
 
 			bombPanel.SetActive (false);
+			goldPanel.SetActive (false);
+			exitPanel.SetActive (false);
 		}
 		else if (instance != this)
 			Destroy(gameObject);
@@ -35,6 +40,17 @@ public class UILevelManager : MonoBehaviour {
 		} else {
 			bombPanel.SetActive (false);
 		}
+		if (GoldManager.instance.GoldCount () > 0) {
+			goldPanel.SetActive (true);
+			exitPanel.SetActive (false);
+
+			Text text = goldPanelText.GetComponent<Text> ();
+			text.text = GoldManager.instance.GoldCount ().ToString ();
+		} else {
+			goldPanel.SetActive (false);
+			exitPanel.SetActive (true);
+		}
+
 	}
 
 	public void SetPlayer(Player player) {

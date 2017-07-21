@@ -42,4 +42,8 @@ public class GoldManager : MonoBehaviour {
 	public void AddExit(Exit exit) {
 		exits.Add (exit);
 	}
+
+	public int GoldCount() {
+		return golds.Count;
+	}
 }
