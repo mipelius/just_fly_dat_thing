@@ -8,6 +8,8 @@ TagManager:
   - exit
   - gold
   - explosive
+  - Fire
+  - bombbox
   layers:
   - Default
   - TransparentFX
