@@ -10,6 +10,8 @@ public class Player : MonoBehaviour {
 	public float damageThreshold;
 	public float damageFactor;
 
+	public int bombs;
+
 	public float health;
 
 	public GameObject bomb;
@@ -47,7 +49,10 @@ public class Player : MonoBehaviour {
 
 	void Update() {
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			DropBomb ();	
+			if (bombs > 0) {
+				DropBomb ();
+				bombs--;
+			}
 		}
 	}
 
@@ -110,6 +115,12 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
+		if (collision.collider.tag == "bombbox") {
+			bombs++;
+			Destroy (collision.collider.gameObject);
+			return;
+		}
+
 		float collisionMagnitude = collision.relativeVelocity.magnitude;
 
 		if (collisionMagnitude > damageThreshold) {
