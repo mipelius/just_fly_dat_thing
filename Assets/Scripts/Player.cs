@@ -62,7 +62,7 @@ public class Player : MonoBehaviour {
 	}
 
 	void AddCustomDrag (float drag) {
-		rb.AddForce (-rb.velocity.normalized * drag * rb.velocity.sqrMagnitude);
+		rb.AddForce (-rb.velocity.normalized * drag * rb.velocity.sqrMagnitude * rb.velocity.sqrMagnitude);
 	}
 
 	void LimitVelocity() {

@@ -55,7 +55,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 10
-  m_LinearDrag: 0.1
+  m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -126,9 +126,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationVelocity: 280
-  accelerationForce: 400
+  accelerationForce: 600
   damageThreshold: 10
   damageFactor: 1
+  customDrag: 0.001
   velocityLimit: 20
   bombs: 0
   health: 400
