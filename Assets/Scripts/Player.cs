@@ -10,6 +10,8 @@ public class Player : MonoBehaviour {
 	public float damageThreshold;
 	public float damageFactor;
 
+	public float customDrag;
+
 	public float velocityLimit;
 
 	public int bombs;
@@ -54,7 +56,13 @@ public class Player : MonoBehaviour {
 
 		Accelerate (accelerationInput);
 
-		LimitVelocity ();
+		//LimitVelocity ();
+
+		AddCustomDrag (customDrag);
+	}
+
+	void AddCustomDrag (float drag) {
+		rb.AddForce (-rb.velocity.normalized * drag * rb.velocity.sqrMagnitude);
 	}
 
 	void LimitVelocity() {
