@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 2126215619}
   - component: {fileID: 2126215620}
   - component: {fileID: 2126215621}
+  - component: {fileID: 2126215622}
   m_Layer: 0
   m_Name: __app
   m_TagString: Untagged
@@ -163,3 +164,14 @@ MonoBehaviour:
   levelDevelopmentMode: 1
   debugCanvas: {fileID: 1168284744373978, guid: ea07d221c068b4de6a79e9c659732c1a,
     type: 2}
+--- !u!114 &2126215622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2126215618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7913feb7d5914630b4f7347e40eca23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

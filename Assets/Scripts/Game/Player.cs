@@ -162,7 +162,8 @@ public class Player : MonoBehaviour {
 	{
 		if (collision.collider.tag == "bombbox") {
 			bombs++;
-			Destroy (collision.collider.gameObject);
+			//collision.collider.enabled = false;
+			Destroy (collision.gameObject);
 			return;
 		}
 

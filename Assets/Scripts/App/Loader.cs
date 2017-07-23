@@ -10,7 +10,7 @@ public class Loader : MonoBehaviour {
 
 	void Awake () {
 		if (levelDevelopmentMode) {			
-			debugCanvas = Instantiate (debugCanvas); DontDestroyOnLoad (debugCanvas);
+			// -- stays in current scene --
 		} else {
 			UnityEngine.SceneManagement.SceneManager.LoadScene ("ScreenMain");
 		}
