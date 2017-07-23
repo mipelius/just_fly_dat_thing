@@ -1,0 +1,20 @@
+{
+	"users":
+		[
+			{ 
+				"id":1, 
+				"name":"Pekka", 
+				"level":"3"
+			},
+			{ 
+				"id":2, 
+				"name":"Jutta", 
+				"level":"5"
+			},
+			{ 
+				"id":3, 
+				"name":"Helmi", 
+				"level":"12"
+			}
+		]
+}

@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class UserManager : MonoBehaviour {
 
 	[System.Serializable]
-	class Users {
+	class UserData {
 		public User[] users;
 	}
 
@@ -13,7 +14,9 @@ public class UserManager : MonoBehaviour {
 
 	private User _currentUser = null;
 
-	private Users users;
+	private UserData userData;
+
+	private string userDataFilePath = "users.json"; 
 
 	void Awake () {
 		if (instance == null) {
@@ -28,7 +31,7 @@ public class UserManager : MonoBehaviour {
 	public List<User> GetUsers() {
 		List<User> usersToReturn = new List<User> ();
 
-		foreach (User user in users.users) {
+		foreach (User user in userData.users) {
 			usersToReturn.Add (user);
 		}
 
@@ -60,13 +63,14 @@ public class UserManager : MonoBehaviour {
 	}
 
 	private void LoadUsers() {
-		string jsonString = 
-			"{\"users\":[" +
-			"   {\"id\":1, \"name\":\"Pekka\", \"level\":1}," +
-			"   {\"id\":2, \"name\":\"Janne\", \"level\":2}," +
-			"   {\"id\":3, \"name\":\"Heikka\", \"level\":3}" +
-			"]}";
-		
-		users = JsonUtility.FromJson<Users> (jsonString);
+		string filePath = Path.Combine (Application.streamingAssetsPath, userDataFilePath);
+
+		if (File.Exists (filePath)) {
+			string jsonString = File.ReadAllText (filePath);				
+			userData = JsonUtility.FromJson<UserData> (jsonString);
+		} else {
+			Debug.LogError ("Cannot find game data!");
+		}
+
 	}
 }
