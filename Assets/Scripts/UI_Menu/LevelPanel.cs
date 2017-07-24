@@ -17,12 +17,6 @@ public class LevelPanel : MonoBehaviour {
 			Destroy(gameObject);		
 	}
 
-	void Start() {
-		 //JUST FOR TESTING:
-		List<User> users = UserManager.instance.GetUsers ();
-		UserManager.instance.currentUser = users [1];
-	}
-
 	void Update () {
 		foreach (LevelButton button in levelButtons) {
 			if (button.levelNumber <= UserManager.instance.currentUser.level) {
@@ -31,10 +25,6 @@ public class LevelPanel : MonoBehaviour {
 				button.SetActive (false);
 			}
 		}	
-
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			UserManager.instance.currentUser.level++;
-		}
 	}
 
 	public void AddLevelButton(LevelButton button) {

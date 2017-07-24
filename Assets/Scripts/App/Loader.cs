@@ -6,8 +6,6 @@ public class Loader : MonoBehaviour {
 
 	public bool levelDevelopmentMode;
 
-	public GameObject debugCanvas;
-
 	void Awake () {
 		if (levelDevelopmentMode) {			
 			// -- stays in current scene --

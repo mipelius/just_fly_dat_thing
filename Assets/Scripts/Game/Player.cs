@@ -166,7 +166,7 @@ public class Player : MonoBehaviour {
 			Destroy (collision.gameObject);
 			return;
 		}
-
+			
 		float collisionMagnitude = collision.relativeVelocity.magnitude;
 
 		if (collisionMagnitude > damageThreshold) {
