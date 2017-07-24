@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class Loader : MonoBehaviour {
 
-	public bool levelDevelopmentMode;
-
 	void Awake () {
-		if (levelDevelopmentMode) {			
-			// -- stays in current scene --
-		} else {
+		#if !UNITY_EDITOR
 			UnityEngine.SceneManagement.SceneManager.LoadScene ("ScreenMain");
-		}
+		#endif
+		// -- else stays in current scene --
 	}
 }
