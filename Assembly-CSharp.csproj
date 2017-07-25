@@ -51,10 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\App\Data\Level.cs" />
+     <Compile Include="Assets\Scripts\App\Data\Score.cs" />
+     <Compile Include="Assets\Scripts\App\Data\User.cs" />
      <Compile Include="Assets\Scripts\App\DDOL.cs" />
      <Compile Include="Assets\Scripts\App\DevPreload.cs" />
+     <Compile Include="Assets\Scripts\App\LevelManager.cs" />
      <Compile Include="Assets\Scripts\App\Loader.cs" />
-     <Compile Include="Assets\Scripts\App\User.cs" />
      <Compile Include="Assets\Scripts\App\UserManager.cs" />
      <Compile Include="Assets\Scripts\Game\Base.cs" />
      <Compile Include="Assets\Scripts\Game\Bomb.cs" />

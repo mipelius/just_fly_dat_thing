@@ -6,6 +6,6 @@ public class Explosion : MonoBehaviour {
 	void Start () {
 		ParticleSystem exp = GetComponent<ParticleSystem>();
 		exp.Play();
-		Destroy(gameObject, exp.duration);	
+		Destroy(gameObject, exp.main.duration);	
 	}
 }

@@ -13,9 +13,7 @@ public class UserManager : MonoBehaviour {
 	public static UserManager instance;
 
 	private User _currentUser = null;
-
 	private List<User> users;
-
 	private string userDataFilePath = "users.json"; 
 
 	void Awake () {
