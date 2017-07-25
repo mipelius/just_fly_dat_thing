@@ -15,7 +15,7 @@ public class FallingBlock : MonoBehaviour {
 
 	private float restartDelay = 0.5f;
 
-	private bool hasCollided = false;
+	private bool hasCollided;
 
 	private SpriteRenderer spriteRenderer;
 
@@ -24,6 +24,8 @@ public class FallingBlock : MonoBehaviour {
 		originalRotation = transform.rotation;
 		rb = GetComponent<Rigidbody2D> ();
 		spriteRenderer = GetComponent<SpriteRenderer> ();
+
+		hasCollided = false;
 	}
 
 
@@ -36,6 +38,8 @@ public class FallingBlock : MonoBehaviour {
 		if (collision.gameObject.tag == "fallingBlock" || hasCollided) {
 			return;
 		}
+
+		hasCollided = true;
 
 		if (collision.gameObject.tag == "Player") {
 			collision.gameObject.SendMessage ("ApplyDamage", damage);
@@ -55,5 +59,7 @@ public class FallingBlock : MonoBehaviour {
 		rb.angularVelocity = 0;
 
 		spriteRenderer.enabled = true;
+
+		hasCollided = false;
 	}
 }

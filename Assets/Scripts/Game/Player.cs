@@ -182,7 +182,7 @@ public class Player : MonoBehaviour {
 
 		if (collisionMagnitude > damageThreshold) {
 			ApplyDamage (damageFactor * collisionMagnitude);
-		}			
+		}
 	}
 
 	void OnCollisionStay2D(Collision2D collision) {
