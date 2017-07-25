@@ -30,4 +30,8 @@ public class LevelPanel : MonoBehaviour {
 	public void AddLevelButton(LevelButton button) {
 		levelButtons.Add (button);
 	}
+
+	public void MainMenuClick () {
+		UnityEngine.SceneManagement.SceneManager.LoadScene ("ScreenMain");
+	}
 }
