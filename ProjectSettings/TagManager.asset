@@ -10,6 +10,7 @@ TagManager:
   - explosive
   - Fire
   - bombbox
+  - fallingBlock
   layers:
   - Default
   - TransparentFX

@@ -67,7 +67,7 @@ public class LevelManager : MonoBehaviour {
 
 	public Level currentLevel {
 		get { 
-			return _currentLevel; 
+			return _currentLevel;
 		}
 	}
 
@@ -87,7 +87,8 @@ public class LevelManager : MonoBehaviour {
 			throw new UnityException ("No such level, level = " + levelNumber);
 		}
 
-		UnityEngine.SceneManagement.SceneManager.LoadScene (level.sceneName);
+		_currentLevel = level;
 
+		UnityEngine.SceneManagement.SceneManager.LoadScene (level.sceneName);
 	}
 }
