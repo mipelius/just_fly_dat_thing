@@ -6,14 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/_preload.unity
+    path: Assets/_Scenes/_preload.unity
     guid: 05d692271ff054eb6a9d4b531fd49462
   - enabled: 1
-    path: Assets/Scenes/ScreenMain.unity
+    path: Assets/_Scenes/ScreenMain.unity
     guid: 3a1a42db38fcd4a0e855de2f2886ae48
   - enabled: 1
-    path: Assets/Scenes/Examples/ExampleFull.unity
+    path: Assets/_Scenes/Examples/ExampleFull.unity
     guid: bf18e522b88474f2ab6edb16ae4cf026
   - enabled: 1
-    path: Assets/Scenes/ScreenLevelSelect.unity
+    path: Assets/_Scenes/ScreenLevelSelect.unity
     guid: 691626f53977a4d80af1f4987dcf7be9
+  - enabled: 1
+    path: Assets/_Scenes/Examples/Example3.unity
+    guid: 527732e1825ef4c26994b1ce0bfa7fc4
+  - enabled: 1
+    path: Assets/_Scenes/Examples/Example2.unity
+    guid: b79eb3541c903422ba6cfd30c3e574b2
+  - enabled: 1
+    path: Assets/_Scenes/Examples/Example1.unity
+    guid: ee3a059b656d9403bb67c931458e3a07

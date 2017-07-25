@@ -23,7 +23,7 @@ public class Level : IComparable<Level> {
 		return 0;
 	}
 
-	public Level(int id, string name, string sceneName, string levelImageName) {
+	public Level(int id, string name, string sceneName, string levelImage) {
 		_id = id;
 		_name = name;
 		_sceneName = sceneName;

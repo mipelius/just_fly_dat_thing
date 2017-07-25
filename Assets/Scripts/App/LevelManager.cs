@@ -15,11 +15,11 @@ public class LevelManager : MonoBehaviour {
 	private string scoreDataFilePath = "scores.json";
 
 	private Level[] levels = {
-		new Level(0, "Tutorial", "Tutorial", "Tutorial"),
+		new Level(0, "Tutorial", "Tutorial", "levelY"),
 		new Level(1, "Kakki", "ExampleFull", "levelX"),
-		new Level(2, "Nakki", "ExampleFull", "levelX"),
-		new Level(3, "HIHII", "ExampleFull", "levelX"),
-		new Level(4, "HOHOO", "ExampleFull", "levelX")
+		new Level(2, "Nakki", "Example1", "levelY"),
+		new Level(3, "HIHII", "Example2", "levelX"),
+		new Level(4, "HOHOO", "Example3", "levelY")
 	};
 
 	private Level _currentLevel = null;
@@ -69,8 +69,25 @@ public class LevelManager : MonoBehaviour {
 		get { 
 			return _currentLevel; 
 		}
-		set { 
-			_currentLevel = value; 
+	}
+
+	public Level GetLevel(int levelNumber) {
+		foreach (Level level in levels) {
+			if (level.id == levelNumber) {
+				return level;
+			}
 		}
+		return null;
+	}
+
+	public void LoadLevel(int levelNumber) {
+		Level level = GetLevel (levelNumber);
+
+		if (level == null) {
+			throw new UnityException ("No such level, level = " + levelNumber);
+		}
+
+		UnityEngine.SceneManagement.SceneManager.LoadScene (level.sceneName);
+
 	}
 }

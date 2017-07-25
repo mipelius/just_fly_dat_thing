@@ -187,10 +187,11 @@ f4a35c51d62b50811b2e59206a7ad448 Assembly-CSharp.dll:.Base
 f4b175ffc1eeca85d2783436b4c764a7 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Effects.Explosive
 f356c0e899cd98989030dcd033757763 Assembly-CSharp.dll:.CameraBehaviour
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.FPSCounter
-18179d64eeec7291721d18f7aafbd871 Assembly-CSharp.dll:.LevelButton
+d58e10819693a6835ce42c5f8a57f172 Assembly-CSharp.dll:.LevelButton
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DevPreload
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TriggerManager
 97c6c2d1a8baae84e68b22a4a7c7a721 Assembly-CSharp.dll:.UILevelManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.NewGamePanel
 0f3d4bb7128a287827d041c696039525 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.AutoMobileShaderSwitch
 19e7948331768480cb4c697695119ae9 Assembly-CSharp.dll:.LevelFinishedPanel
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LevelManager
