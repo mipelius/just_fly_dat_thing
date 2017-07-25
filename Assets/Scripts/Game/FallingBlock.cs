@@ -13,28 +13,43 @@ public class FallingBlock : MonoBehaviour {
 
 	private Rigidbody2D rb;
 
+	private float restartDelay = 0.5f;
+
+	private bool hasCollided = false;
+
+	private SpriteRenderer spriteRenderer;
 
 	void Start () {
 		originalPosition = transform.position;
 		originalRotation = transform.rotation;
 		rb = GetComponent<Rigidbody2D> ();
-		Explode ();
+		spriteRenderer = GetComponent<SpriteRenderer> ();
 	}
 
 
-	void Explode() {
-		Instantiate (fallingBlockExplosion, this.transform.position, Quaternion.identity);
+	void Explode() {		
+		GameObject explosion = Instantiate (fallingBlockExplosion, transform.position, Quaternion.identity);
+		explosion.transform.localScale *= spriteRenderer.size.x * 3;
+	}
+
+	void OnCollisionEnter2D(Collision2D collision) {
+		if (collision.gameObject.tag == "fallingBlock" || hasCollided) {
+			return;
+		}
+
+		Explode ();
+		spriteRenderer.enabled = false;
+		StartCoroutine ("Restart");
+	}
+
+	IEnumerator Restart() {
+		yield return new WaitForSeconds(restartDelay);
 
 		transform.position = originalPosition;
 		transform.rotation = originalRotation;
 		rb.velocity = new Vector2(0, 0);
 		rb.angularVelocity = 0;
-	}
 
-	void OnCollisionEnter2D(Collision2D collision) {
-		if (collision.collider.gameObject.tag == "Player") {
-			collision.rigidbody.AddForce (rb.velocity.normalized * pushForce);
-		}
-		Explode ();
+		spriteRenderer.enabled = true;
 	}
 }
