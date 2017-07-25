@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1883196984948842}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 56.155693, y: 50.46735, z: -1}
+  m_LocalPosition: {x: 54.557415, y: 57.00577, z: -1}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallingBlockExplosion: {fileID: 1082773709980004, guid: 52fb832e4a3c0488d80ed2cee4e6699f,
     type: 2}
-  pushForce: 3000
+  damage: 20
 --- !u!212 &212016750922468552
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -6,7 +6,7 @@ public class FallingBlock : MonoBehaviour {
 	
 	public GameObject fallingBlockExplosion;
 
-	public float pushForce;
+	public float damage;
 
 	private Vector3 originalPosition;
 	private Quaternion originalRotation;
@@ -35,6 +35,10 @@ public class FallingBlock : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision) {
 		if (collision.gameObject.tag == "fallingBlock" || hasCollided) {
 			return;
+		}
+
+		if (collision.gameObject.tag == "Player") {
+			collision.gameObject.SendMessage ("ApplyDamage", damage);
 		}
 
 		Explode ();

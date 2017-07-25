@@ -168,20 +168,20 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.collider.tag == "bombbox") {
+		if (collision.gameObject.tag == "bombbox") {
 			bombs++;
-			//collision.collider.enabled = false;
 			Destroy (collision.gameObject);
 			return;
 		}
-			
+
+		if (collision.gameObject.tag == "fallingBlock") {
+			return;
+		}
+
 		float collisionMagnitude = collision.relativeVelocity.magnitude;
 
 		if (collisionMagnitude > damageThreshold) {
-			health -= damageFactor * collisionMagnitude;
-			if (health <= 0) {
-				health = 0;
-			}
+			ApplyDamage (damageFactor * collisionMagnitude);
 		}			
 	}
 
@@ -197,5 +197,12 @@ public class Player : MonoBehaviour {
 		yield return new WaitForSeconds(2.2f);
 
 		UILevelManager.instance.Restart ();
+	}
+
+	public void ApplyDamage(float amount) {
+		health -= amount;
+		if (health <= 0) {
+			health = 0;
+		}
 	}
 }
