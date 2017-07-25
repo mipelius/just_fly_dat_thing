@@ -96,4 +96,16 @@ public class UILevelManager : MonoBehaviour {
 	public void ExitLevel () {
 		UnityEngine.SceneManagement.SceneManager.LoadScene ("ScreenLevelSelect");
 	}
+
+	public void LevelFinished () {
+		User user = UserManager.instance.currentUser;
+
+		if (user != null) {
+			// if this level number equals User.level
+			// then user -> level up
+		}
+
+		LevelFinishedPanel panel = gameObject.GetComponent<LevelFinishedPanel> ();
+		panel.Show ();
+	}
 }

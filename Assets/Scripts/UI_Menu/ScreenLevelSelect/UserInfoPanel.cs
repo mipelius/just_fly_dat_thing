@@ -8,7 +8,9 @@ public class UserInfoPanel : MonoBehaviour {
 	public GameObject userInfoText;
 
 	void Update () {
-		Text text = userInfoText.GetComponent<Text> ();
-		text.text = "Player: " + UserManager.instance.currentUser.name;	
+		if (UserManager.instance.currentUser != null) {
+			Text text = userInfoText.GetComponent<Text> ();
+			text.text = "Player: " + UserManager.instance.currentUser.name;	
+		}
 	}
 }

@@ -26,7 +26,7 @@ public class Exit : MonoBehaviour {
 	}
 	private void OnTriggerEnter2D (Collider2D other) {
 		if (other.tag == "Player" && canUse) {
-			UILevelManager.instance.Restart ();
+			UILevelManager.instance.LevelFinished ();
 		}			
 	}
 }

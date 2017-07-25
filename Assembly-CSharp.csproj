@@ -72,7 +72,8 @@
      <Compile Include="Assets\Scripts\Game\TriggerBehaviour.cs" />
      <Compile Include="Assets\Scripts\Game\TriggerManager.cs" />
      <Compile Include="Assets\Scripts\Game\UILevelManager.cs" />
-     <Compile Include="Assets\Scripts\UI_Menu\PauseGamePanel.cs" />
+     <Compile Include="Assets\Scripts\UI_Menu\InGamePanels\LevelFinishedPanel.cs" />
+     <Compile Include="Assets\Scripts\UI_Menu\InGamePanels\PauseGamePanel.cs" />
      <Compile Include="Assets\Scripts\UI_Menu\ScreenLevelSelect\LevelButton.cs" />
      <Compile Include="Assets\Scripts\UI_Menu\ScreenLevelSelect\LevelPanel.cs" />
      <Compile Include="Assets\Scripts\UI_Menu\ScreenLevelSelect\UserInfoPanel.cs" />
