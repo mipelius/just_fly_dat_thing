@@ -18,8 +18,14 @@ public class LevelPanel : MonoBehaviour {
 	}
 
 	void Update () {
+		int userLevel = 100;
+
+		if (UserManager.instance.currentUser != null) {
+			userLevel = UserManager.instance.currentUser.level;
+		}
+
 		foreach (LevelButton button in levelButtons) {
-			if (button.levelNumber <= UserManager.instance.currentUser.level) {
+			if (button.levelNumber <= userLevel) {
 				button.SetActive (true);
 			} else {
 				button.SetActive (false);

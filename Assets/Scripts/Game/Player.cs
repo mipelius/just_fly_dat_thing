@@ -40,6 +40,10 @@ public class Player : MonoBehaviour {
 	}
 
 	void FixedUpdate  () {
+		if (Time.timeScale == 0) {
+			return;
+		}
+
 		bool inputLeft = Input.GetKey (KeyCode.LeftArrow);
 		bool inputRight = Input.GetKey (KeyCode.RightArrow);
 
@@ -74,6 +78,10 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update() {
+		if (Time.timeScale == 0) {
+			return;
+		}
+
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			if (bombs > 0) {
 				DropBomb ();

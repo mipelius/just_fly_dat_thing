@@ -92,4 +92,8 @@ public class UILevelManager : MonoBehaviour {
 
 		UnityEngine.SceneManagement.SceneManager.LoadScene(scene.name);
 	}
+
+	public void ExitLevel () {
+		UnityEngine.SceneManagement.SceneManager.LoadScene ("ScreenLevelSelect");
+	}
 }
