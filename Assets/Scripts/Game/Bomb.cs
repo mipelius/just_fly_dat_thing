@@ -49,8 +49,7 @@ public class Bomb : MonoBehaviour {
 				Vector2 direction = rb.position - pos;
 				float rangeFactor = (explosionRange - direction.magnitude) / explosionRange;
 				direction.Normalize ();
-				rb.AddForce (explosionForce * rangeFactor * direction);
-			
+				rb.AddForce (explosionForce * rangeFactor * direction, ForceMode2D.Impulse);
 
 				if (collider.tag == "Player") {
 					float damage = rangeFactor * maxDamage;
