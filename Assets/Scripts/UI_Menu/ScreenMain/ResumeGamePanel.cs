@@ -18,8 +18,7 @@ public class ResumeGamePanel : MonoBehaviour {
 
 		public OnClickListener(User user) { this.user = user; }
 
-		public void Action() {	
-			Debug.Log (user.id);
+		public void Action() {				
 			UserManager.instance.currentUser = user;
 			UnityEngine.SceneManagement.SceneManager.LoadScene ("ScreenLevelSelect");
 		}

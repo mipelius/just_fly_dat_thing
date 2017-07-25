@@ -1,20 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelFinishedPanel : MonoBehaviour {
 
 	public GameObject levelFinishedPanel;
 
+	public GameObject yourScoreTextObj;
+	public GameObject yourBestScoreTextObj;
+	public GameObject highscoreTextObj;
+
 	void Awake () {
 		Time.timeScale = 1;
 	}
 
-	public void Show() {
+	public void Show(int score) {
+		User user = UserManager.instance.currentUser;
+		Level level = LevelManager.instance.currentLevel;
+
 		Time.timeScale = 0;
 		levelFinishedPanel.SetActive (true);
 
-		// update score text etc...
+		Text yourScoreText = yourScoreTextObj.GetComponent<Text> ();
+		Text yourBestScoreText = yourBestScoreTextObj.GetComponent<Text> ();
+		Text highscoreText = highscoreTextObj.GetComponent<Text> ();
+
+		yourScoreText.text = score.ToString ();
+		yourBestScoreText.text = 
+			level.BestScoreForUser (user).score.ToString ();
+		highscoreText.text = 
+			level.highscore.score.ToString ();
 	}
 
 	public void RestartClicked() {
@@ -26,6 +42,7 @@ public class LevelFinishedPanel : MonoBehaviour {
 	}
 
 	public void NextClicked() {
-		// next level
+		Level level = LevelManager.instance.currentLevel;
+		LevelManager.instance.LoadLevel (level.id + 1);
 	}
 }

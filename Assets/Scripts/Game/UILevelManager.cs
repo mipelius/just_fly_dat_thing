@@ -15,6 +15,9 @@ public class UILevelManager : MonoBehaviour {
 	public GameObject exitPanel;
 	public GameObject timeText;
 
+	public float scoreMultiplier = 1000;
+	public float scoreTimeAddition = 40;
+
 	private Player player;
 
 	private float awakeTimeStamp;
@@ -97,17 +100,41 @@ public class UILevelManager : MonoBehaviour {
 		UnityEngine.SceneManagement.SceneManager.LoadScene ("ScreenLevelSelect");
 	}
 
-	public void LevelFinished () {		
+	public void LevelFinished () {
 		User user = UserManager.instance.currentUser;
 		Level level = LevelManager.instance.currentLevel;
 
-		if (user != null) {
+		if (user != null && level != null) {
+			// raise user level up if necessary
+
 			if (user.level <= level.id) {
 				user.level++;
 			}
+
+			// give some score
+
+			Score score = new Score();
+
+			score.level_id = level.id;
+			score.user_id = user.id;
+			score.score = CalculateScore();
+
+			level.AddScore (score);
 		}
 
 		LevelFinishedPanel panel = gameObject.GetComponent<LevelFinishedPanel> ();
-		panel.Show ();
+		panel.Show (CalculateScore());
 	}
+
+	public int CalculateScore() {
+		float time = Time.time - awakeTimeStamp;
+
+		int score = Mathf.FloorToInt (
+			(player.health / (time + scoreTimeAddition)) 
+			* scoreMultiplier
+		);
+
+		return score;
+	}
+
 }

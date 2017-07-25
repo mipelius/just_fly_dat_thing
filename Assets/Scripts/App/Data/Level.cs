@@ -56,7 +56,7 @@ public class Level : IComparable<Level> {
 		}
 	}
 
-	public void AddScore(Score score) {	
+	public void AddScore(Score score) {
 		_scores.Add (score);
 	}
 
@@ -76,22 +76,25 @@ public class Level : IComparable<Level> {
 
 	public Score highscore {
 		get {
-			_scores.Sort ();
+			_scores.Sort();
+			_scores.Reverse ();
 			return _scores[0];
 		}
 	}
 
-	public int bestScoreForUser(User user) {
+	public Score BestScoreForUser(User user) {
 		int bestScore = 0;
+		Score scoreToReturn = null;
 
 		foreach (Score score in _scores) {
 			if (score.user_id == user.id) {
 				if (bestScore < score.score) {
 					bestScore = score.score;
+					scoreToReturn = score;
 				}
 			}
 		}
 
-		return bestScore;
+		return scoreToReturn;
 	}
 }

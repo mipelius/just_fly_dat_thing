@@ -1817,6 +1817,8 @@ MonoBehaviour:
   goldPanelText: {fileID: 1266082868931160}
   exitPanel: {fileID: 1221058570602892}
   timeText: {fileID: 1774249428841470}
+  scoreMultiplier: 1000
+  scoreTimeAddition: 40
 --- !u!114 &114669863704538974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1829,6 +1831,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelFinishedPanel: {fileID: 1700895316428970}
+  yourScoreTextObj: {fileID: 1834619965849050}
+  yourBestScoreTextObj: {fileID: 1826693791884262}
+  highscoreTextObj: {fileID: 1005214519822670}
 --- !u!114 &114707406626203240
 MonoBehaviour:
   m_ObjectHideFlags: 1
