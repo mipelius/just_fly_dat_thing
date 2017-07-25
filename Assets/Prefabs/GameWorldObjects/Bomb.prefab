@@ -112,9 +112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583bf8158d34e4c19a8bdec685cc6263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionRange: 10
-  explosionForce: 20000
+  explosionRange: 5
+  explosionForce: 40000
   activationDelay: 0.5
+  maxDamage: 80
   explosion: {fileID: 1990463467326792, guid: da06f3ccabec947048680c22720e5f7a, type: 2}
 --- !u!212 &212202296278485922
 SpriteRenderer:

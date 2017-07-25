@@ -9,6 +9,8 @@ public class Bomb : MonoBehaviour {
 
 	public float activationDelay;
 
+	public float maxDamage;
+
 	public GameObject explosion;
 
 	private float awakeTimeStamp;
@@ -48,6 +50,12 @@ public class Bomb : MonoBehaviour {
 				float rangeFactor = (explosionRange - direction.magnitude) / explosionRange;
 				direction.Normalize ();
 				rb.AddForce (explosionForce * rangeFactor * direction);
+			
+
+				if (collider.tag == "Player") {
+					float damage = rangeFactor * maxDamage;
+					collider.gameObject.SendMessage ("ApplyDamage", damage);
+				}
 			}
 
 			if (collider.tag == "explosive") {
@@ -58,6 +66,7 @@ public class Bomb : MonoBehaviour {
 					}
 				}
 			}
+
 		}
 
 		GameObject exp = Instantiate (explosion, this.transform.position, Quaternion.identity);
