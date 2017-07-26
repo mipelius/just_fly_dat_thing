@@ -120,6 +120,7 @@ public class UILevelManager : MonoBehaviour {
 			score.score = CalculateScore();
 
 			level.AddScore (score);
+			LevelManager.instance.SaveScores ();
 		}
 
 		LevelFinishedPanel panel = gameObject.GetComponent<LevelFinishedPanel> ();

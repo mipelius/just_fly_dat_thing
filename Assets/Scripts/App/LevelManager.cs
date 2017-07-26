@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour {
 
 	private Level[] levels = {
 		new Level(0, "Tutorial", "Tutorial", "levelY"),
-		new Level(1, "Kakki", "ExampleFull", "levelX"),
+		new Level(1, "Kakki", "Example2", "levelX"),
 		new Level(2, "Nakki", "Example1", "levelY"),
 		new Level(3, "HIHII", "Example2", "levelX"),
 		new Level(4, "HOHOO", "Example3", "levelY")
@@ -35,7 +35,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void LoadScores() {		
-		string filePath = Path.Combine (Application.streamingAssetsPath, scoreDataFilePath);
+		string filePath = GetFilePath ();
 
 		if (File.Exists (filePath)) {
 			string jsonString = File.ReadAllText (filePath);				
@@ -48,9 +48,8 @@ public class LevelManager : MonoBehaviour {
 					}
 				}
 			}
-		} else {
-			Debug.LogError ("Cannot find game data!");
-		}
+		} 
+		// else nothing because there is no scores yet!
 	}
 
 	public List<Level> GetLevels() {
@@ -90,5 +89,27 @@ public class LevelManager : MonoBehaviour {
 		_currentLevel = level;
 
 		UnityEngine.SceneManagement.SceneManager.LoadScene (level.sceneName);
+	}
+
+	public void SaveScores() {
+		List<Score> allScores = new List<Score> ();
+
+		foreach (Level level in levels) {
+			List<Score> levelScores = level.scores;
+			foreach (Score score in levelScores) {
+				allScores.Add (score);
+			}
+		}
+
+		RawScoreData scoreData = new RawScoreData ();
+		scoreData.scores = allScores.ToArray ();
+		string jsonString = JsonUtility.ToJson (scoreData);
+		string filePath = GetFilePath ();
+
+		File.WriteAllText(filePath, jsonString);
+	}
+
+	private string GetFilePath() {
+		return Path.Combine (Application.streamingAssetsPath, scoreDataFilePath);
 	}
 }
