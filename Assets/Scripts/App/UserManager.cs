@@ -45,7 +45,7 @@ public class UserManager : MonoBehaviour {
 
 		users.Add (user);
 
-		Save();
+		Save ();
 
 		return user;
 	}
@@ -63,10 +63,6 @@ public class UserManager : MonoBehaviour {
 		set {
 			_currentUser = value;
 		}
-	}
-
-	public void Save() {
-		// save
 	}
 
 	public User GetUser(string name) {
@@ -90,7 +86,7 @@ public class UserManager : MonoBehaviour {
 	private void LoadUsers() {
 		users = new List<User> ();
 
-		string filePath = Path.Combine (Application.streamingAssetsPath, userDataFilePath);
+		string filePath = GetFilePath ();
 
 		if (File.Exists (filePath)) {
 			string jsonString = File.ReadAllText (filePath);				
@@ -100,9 +96,8 @@ public class UserManager : MonoBehaviour {
 				users.Add (user);
 			}
 
-		} else {
-			Debug.LogError ("Cannot find game data!");
-		}
+		} 
+		// else { just use the empty list of users }
 	}
 
 	private int GetFreeUserId() {
@@ -114,5 +109,18 @@ public class UserManager : MonoBehaviour {
 		}
 		
 		return freeUserId;
+	}
+
+	private void Save() {
+		User[] usersToSave = users.ToArray ();
+		RawUserData userData = new RawUserData();
+		userData.users = usersToSave;
+		string userDataJsonString = JsonUtility.ToJson (userData);
+		string filePath = GetFilePath ();
+		File.WriteAllText(filePath, userDataJsonString);
+	}
+
+	private string GetFilePath() {
+		return Path.Combine (Application.streamingAssetsPath, userDataFilePath);				
 	}
 }
