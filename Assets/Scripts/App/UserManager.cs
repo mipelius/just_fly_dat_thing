@@ -50,8 +50,8 @@ public class UserManager : MonoBehaviour {
 		return user;
 	}
 
-	public void DeleteUser() {
-		// delete user
+	public void DeleteUser(User user) {
+		users.Remove (user);
 		Save();
 	}
 

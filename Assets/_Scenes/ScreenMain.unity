@@ -948,7 +948,8 @@ MonoBehaviour:
     type: 2}
   newGamePanel: {fileID: 1559880732830312, guid: 36731bc8a58c94e29acd0daa91e9b62a,
     type: 2}
-  highscoresPanel: {fileID: 0}
+  highscoresPanel: {fileID: 1863551165641480, guid: 6f803f70187c54c4790a353633d086ac,
+    type: 2}
   backButton: {fileID: 1223852622125156, guid: 460fcdc86cbdd42089fe0fc4912a000f, type: 2}
 --- !u!1 &1620614355
 GameObject:
