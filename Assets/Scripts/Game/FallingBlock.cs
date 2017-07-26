@@ -18,16 +18,17 @@ public class FallingBlock : MonoBehaviour {
 	private bool hasCollided;
 
 	private SpriteRenderer spriteRenderer;
+	private Collider2D collider;
 
 	void Start () {
 		originalPosition = transform.position;
 		originalRotation = transform.rotation;
 		rb = GetComponent<Rigidbody2D> ();
 		spriteRenderer = GetComponent<SpriteRenderer> ();
+		collider = GetComponent<Collider2D> ();
 
 		hasCollided = false;
 	}
-
 
 	void Explode() {		
 		GameObject explosion = Instantiate (fallingBlockExplosion, transform.position, Quaternion.identity);
@@ -47,6 +48,8 @@ public class FallingBlock : MonoBehaviour {
 
 		Explode ();
 		spriteRenderer.enabled = false;
+		collider.enabled = false;
+
 		StartCoroutine ("Restart");
 	}
 
@@ -59,6 +62,7 @@ public class FallingBlock : MonoBehaviour {
 		rb.angularVelocity = 0;
 
 		spriteRenderer.enabled = true;
+		collider.enabled = true;
 
 		hasCollided = false;
 	}
