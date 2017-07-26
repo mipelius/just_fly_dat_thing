@@ -30,7 +30,7 @@ public class LevelManager : MonoBehaviour {
 		new Level(11, "Dummy 11", "Dummy", "dummylevel11"),
 		new Level(12, "Dummy 12", "Dummy", "dummylevel12"),
 		new Level(13, "Dummy 13", "Dummy", "dummylevel13"),
-		new Level(14, "Dummy 14", "Dummy", "dummylevel14"),
+		new Level(14, "Rock\'N\'Buttons", "RockNButtons", "rocknbuttons"),
 		new Level(15, "Dummy 15", "Dummy", "dummylevel15"),
 		new Level(16, "Dummy 16", "Dummy", "dummylevel16"),
 	};
