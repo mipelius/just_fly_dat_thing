@@ -108,7 +108,7 @@ public class UILevelManager : MonoBehaviour {
 			// raise user level up if necessary
 
 			if (user.level <= level.id) {
-				user.level++;
+				UserManager.instance.currentUserLevelUp ();
 			}
 
 			// give some score

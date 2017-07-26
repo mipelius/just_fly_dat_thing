@@ -1831,6 +1831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelFinishedPanel: {fileID: 1700895316428970}
+  nextButtonObj: {fileID: 1219909482721698}
   yourScoreTextObj: {fileID: 1834619965849050}
   yourBestScoreTextObj: {fileID: 1826693791884262}
   highscoreTextObj: {fileID: 1005214519822670}

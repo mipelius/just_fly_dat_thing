@@ -7,6 +7,8 @@ public class LevelFinishedPanel : MonoBehaviour {
 
 	public GameObject levelFinishedPanel;
 
+	public GameObject nextButtonObj;
+
 	public GameObject yourScoreTextObj;
 	public GameObject yourBestScoreTextObj;
 	public GameObject highscoreTextObj;
@@ -19,6 +21,11 @@ public class LevelFinishedPanel : MonoBehaviour {
 		User user = UserManager.instance.currentUser;
 		Level level = LevelManager.instance.currentLevel;
 
+		if (level == null || level.id >= LevelManager.instance.lastLevelNumber) {
+			Button button = nextButtonObj.GetComponent<Button> ();
+			button.interactable = false;
+		}
+
 		Time.timeScale = 0;
 		levelFinishedPanel.SetActive (true);
 
@@ -26,11 +33,16 @@ public class LevelFinishedPanel : MonoBehaviour {
 		Text yourBestScoreText = yourBestScoreTextObj.GetComponent<Text> ();
 		Text highscoreText = highscoreTextObj.GetComponent<Text> ();
 
-		yourScoreText.text = score.ToString ();
-		yourBestScoreText.text = 
-			level.BestScoreForUser (user).score.ToString ();
-		highscoreText.text = 
-			level.highscore.score.ToString ();
+		try {
+			yourScoreText.text = score.ToString ();
+
+			yourBestScoreText.text = 
+				level.BestScoreForUser (user).score.ToString ();
+			highscoreText.text = 
+				level.highscore.score.ToString ();
+		} catch {
+		}
+
 	}
 
 	public void RestartClicked() {

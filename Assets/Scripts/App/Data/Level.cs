@@ -76,13 +76,21 @@ public class Level : IComparable<Level> {
 
 	public Score highscore {
 		get {
-			_scores.Sort();
-			_scores.Reverse ();
-			return _scores[0];
+			if (_scores.Count != 0) {
+				_scores.Sort ();
+				_scores.Reverse ();
+				return _scores [0];
+			} else {
+				return null;
+			}
 		}
 	}
 
 	public Score BestScoreForUser(User user) {
+		if (user == null) {
+			return null;
+		}
+
 		int bestScore = 0;
 		Score scoreToReturn = null;
 

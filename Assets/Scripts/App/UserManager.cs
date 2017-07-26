@@ -89,6 +89,11 @@ public class UserManager : MonoBehaviour {
 		return null;
 	}
 
+	public void currentUserLevelUp() {
+		currentUser.level++;
+		Save ();
+	}
+
 	private void LoadUsers() {
 		users = new List<User> ();
 

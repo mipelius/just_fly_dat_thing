@@ -6,17 +6,13 @@ using System.IO;
 using UnityEngine.EventSystems;
 
 public class HighScoreLevelButton : MonoBehaviour {
-
-	private Button button;
-
+	
 	public int levelNumber;
 
 	public GameObject levelNameText;
 	public GameObject levelImage;
 
 	void Start () {
-		button = GetComponent<Button> ();
-
 		Level level = LevelManager.instance.GetLevel (levelNumber);
 
 		if (level != null) {

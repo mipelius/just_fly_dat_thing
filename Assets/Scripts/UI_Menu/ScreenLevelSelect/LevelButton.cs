@@ -41,7 +41,11 @@ public class LevelButton : MonoBehaviour {
 		disabledPanel.SetActive (!enabled);
 	}
 
-	public void OnMouseEnter() {
-		Debug.Log ("Nappiiii");
+	public void OnMousePointerEnter() {
+		LevelPanel.instance.ShowLevelInfo (levelNumber);
+	}
+
+	public void OnMousePointerExit() {
+		LevelPanel.instance.HideLevelInfo ();
 	}
 }
