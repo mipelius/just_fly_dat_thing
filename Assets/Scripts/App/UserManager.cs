@@ -26,11 +26,17 @@ public class UserManager : MonoBehaviour {
 			Destroy(gameObject);
 	}
 
-	public List<User> GetUsers() {
+	public List<User> GetUsers(bool onlyActiveUsers = false) {
 		List<User> usersToReturn = new List<User> ();
 
 		foreach (User user in users) {
-			usersToReturn.Add (user);
+			if (onlyActiveUsers) {
+				if (user.isActive == true) {					
+					usersToReturn.Add (user);
+				}
+			} else {
+				usersToReturn.Add (user);
+			}
 		}
 
 		return usersToReturn;
@@ -51,7 +57,7 @@ public class UserManager : MonoBehaviour {
 	}
 
 	public void DeleteUser(User user) {
-		users.Remove (user);
+		user.isActive = false;
 		Save();
 	}
 

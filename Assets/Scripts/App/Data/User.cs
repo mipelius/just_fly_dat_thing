@@ -7,6 +7,7 @@ public class User
 	public int id;
 	public string name;
 	public int level;
+	public bool isActive;
 
 	public static User CreateFromJSON(string jsonString)
 	{		
@@ -17,10 +18,11 @@ public class User
 		//return JsonUtility.ToJson().ToString ();
 	}
 
-	public User(int id, string name, int level) {
+	public User(int id, string name, int level, bool isActive = true) {
 		this.id = id;
 		this.name = name;
 		this.level = level;
+		this.isActive = isActive;
 	}
 }
 

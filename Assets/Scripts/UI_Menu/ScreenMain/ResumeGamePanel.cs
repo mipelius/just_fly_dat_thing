@@ -29,7 +29,7 @@ public class ResumeGamePanel : MonoBehaviour {
 	}
 
 	private void CreatePlayerList() {		
-		List<User> users = UserManager.instance.GetUsers ();
+		List<User> users = UserManager.instance.GetUsers (true);
 
 		RectTransform buttonRectTransform = playerButton.GetComponent<RectTransform> ();
 		float height = buttonRectTransform.rect.height;
