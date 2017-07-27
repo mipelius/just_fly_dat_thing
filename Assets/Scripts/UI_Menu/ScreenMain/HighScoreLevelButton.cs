@@ -22,7 +22,12 @@ public class HighScoreLevelButton : MonoBehaviour {
 			RawImage image = levelImage.GetComponent<RawImage> ();
 			string imagePath = Path.Combine ("LevelImages", level.levelImage);
 			image.texture = Resources.Load<Texture2D> (imagePath);
-		}	
+		}
+
+		if (levelNumber == 1) {
+			GetComponent<Button> ().Select ();	
+			MouseClick ();
+		}
 	}
 
 	public void MouseClick() {
