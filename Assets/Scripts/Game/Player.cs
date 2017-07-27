@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
+	public GameObject rocketFireParticleSystem1;
+	public GameObject rocketFireParticleSystem2;
+
 	public float rotationVelocity;
 	public float accelerationForce;
 	public float damageThreshold;
@@ -28,6 +31,9 @@ public class Player : MonoBehaviour {
 
 	private bool isAlive = true;
 
+	private bool isAccelerating = false;
+	private bool stoppedAccelerating = true;
+
 	private bool isColliding = false;
 
 	// Use this for initialization
@@ -40,6 +46,10 @@ public class Player : MonoBehaviour {
 	}
 
 	void FixedUpdate  () {
+		if (!isAlive) {
+			return;
+		}
+
 		if (Time.timeScale == 0) {
 			return;
 		}
@@ -78,6 +88,9 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update() {
+		if (!isAlive) {
+			return;
+		}
 		if (Time.timeScale == 0) {
 			return;
 		}
@@ -114,6 +127,21 @@ public class Player : MonoBehaviour {
 	}
 
 	private void Accelerate (float accelerationInput) {
+		ParticleSystem system1 = rocketFireParticleSystem1.GetComponent<ParticleSystem> ();
+		ParticleSystem system2 = rocketFireParticleSystem2.GetComponent<ParticleSystem> ();
+
+		if (accelerationInput == 0) {
+			system1.Stop ();
+			system2.Stop ();
+			stoppedAccelerating = true;
+		} else {
+			if (stoppedAccelerating) {
+				system1.Play ();
+				system2.Play ();
+				stoppedAccelerating = false;
+			}
+		}
+
 		float accAmount = accelerationInput * accelerationForce;
 
 		Vector2 force = NormalizedDirectionVector() * accAmount;
