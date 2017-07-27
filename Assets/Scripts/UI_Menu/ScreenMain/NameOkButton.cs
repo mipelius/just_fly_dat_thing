@@ -28,6 +28,10 @@ public class NameOkButton : MonoBehaviour {
 			errorPanel.SetActive (false);
 			button.interactable = true;
 		}
+
+		if (Input.GetKeyDown (KeyCode.Return) && button.interactable) {
+			Click ();
+		}
 	}
 
 	public void Click() {
