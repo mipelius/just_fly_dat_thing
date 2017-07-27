@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da62226c9d2ba461f9698c080411c82f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionAudioClip: {fileID: 8300000, guid: 1f444ddeaad26498792c7d5e7e253912, type: 3}
 --- !u!198 &198954911507538292
 ParticleSystem:
   m_ObjectHideFlags: 1

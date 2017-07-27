@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
+	public AudioClip collisionClip;
+
+	public AudioSource accelerationAudioSource;
+
 	public GameObject rocketFireParticleSystem1;
 	public GameObject rocketFireParticleSystem2;
 
@@ -53,6 +57,7 @@ public class Player : MonoBehaviour {
 		}
 
 		if (Time.timeScale == 0) {
+			accelerationAudioSource.Stop ();
 			return;
 		}
 
@@ -94,6 +99,7 @@ public class Player : MonoBehaviour {
 			return;
 		}
 		if (Time.timeScale == 0) {
+			accelerationAudioSource.Stop ();
 			return;
 		}
 
@@ -138,11 +144,18 @@ public class Player : MonoBehaviour {
 		if (accelerationInput == 0) {
 			system1.Stop ();
 			system2.Stop ();
+
+			accelerationAudioSource.Stop ();
+
 			stoppedAccelerating = true;
+
 		} else {
 			if (stoppedAccelerating) {
 				system1.Play ();
 				system2.Play ();
+
+				accelerationAudioSource.Play ();
+
 				stoppedAccelerating = false;
 			}
 		}
@@ -214,6 +227,7 @@ public class Player : MonoBehaviour {
 		float collisionMagnitude = collision.relativeVelocity.magnitude;
 
 		if (collisionMagnitude > damageThreshold) {
+			AudioManager.instance.PlaySingle (collisionClip);
 			ApplyDamage (damageFactor * collisionMagnitude);
 		}
 	}
