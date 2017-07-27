@@ -1222,6 +1222,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerToFollow: {fileID: 0}
+  zoomInSize: 25
+  zoomOutSize: 80
+  zoomingRate: 150
 --- !u!114 &114328338644348768
 MonoBehaviour:
   m_ObjectHideFlags: 1
