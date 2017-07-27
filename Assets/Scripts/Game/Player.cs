@@ -25,6 +25,8 @@ public class Player : MonoBehaviour {
 
 	public GameObject explosion;
 
+	public GameObject bloodBurst;
+
 	private Rigidbody2D rb;
 	private PolygonCollider2D polygonCollider;
 	private SpriteRenderer spriteRenderer;
@@ -107,6 +109,9 @@ public class Player : MonoBehaviour {
 
 			spriteRenderer.enabled = false;
 			rb.simulated = false;
+
+			rocketFireParticleSystem1.SetActive (false);
+			rocketFireParticleSystem2.SetActive (false);
 
 			GameObject exp = Instantiate (explosion, transform.position, Quaternion.identity);
 			exp.transform.localScale *= 8;
@@ -229,6 +234,10 @@ public class Player : MonoBehaviour {
 
 	public void ApplyDamage(float amount) {
 		health -= amount;
+
+		GameObject currentBloodBurst = Instantiate (bloodBurst, transform.position, Quaternion.identity);
+		currentBloodBurst.transform.localScale *= 1 + (amount / 20);
+
 		if (health <= 0) {
 			health = 0;
 		}

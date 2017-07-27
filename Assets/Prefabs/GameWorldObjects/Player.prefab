@@ -84,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1629953521453574}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -8.43199, y: -34.20201, z: -2}
+  m_LocalPosition: {x: 18.359116, y: -35.36841, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4164134475802356}
@@ -199,6 +199,7 @@ MonoBehaviour:
   health: 400
   bomb: {fileID: 1351820238977542, guid: c2f5bbf3df9fc422aaf9facabd8ce9f7, type: 2}
   explosion: {fileID: 1990463467326792, guid: da06f3ccabec947048680c22720e5f7a, type: 2}
+  bloodBurst: {fileID: 1436012492952488, guid: 29dbcc2875aee4e1ebd14d99b659c950, type: 2}
 --- !u!198 &198278262090613724
 ParticleSystem:
   m_ObjectHideFlags: 1

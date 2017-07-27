@@ -20,7 +20,11 @@ public class GoldManager : MonoBehaviour {
 	}
 
 	void Update() {
-		
+		if (golds.Count <= 0) {
+			foreach (Exit exit in exits) {
+				exit.SetOpen ();
+			}
+		}
 	}
 
 	public void AddGold(Gold gold) {
@@ -29,12 +33,6 @@ public class GoldManager : MonoBehaviour {
 
 	public void RemoveGold(Gold gold) {
 		golds.Remove (gold);
-
-		if (golds.Count <= 0) {
-			foreach (Exit exit in exits) {
-				exit.SetOpen ();
-			}
-		}
 	}
 
 	public void AddExit(Exit exit) {
