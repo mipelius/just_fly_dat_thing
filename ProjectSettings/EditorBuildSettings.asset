@@ -12,20 +12,35 @@ EditorBuildSettings:
     path: Assets/_Scenes/ScreenMain.unity
     guid: 3a1a42db38fcd4a0e855de2f2886ae48
   - enabled: 1
-    path: Assets/_Scenes/Examples/ExampleFull.unity
-    guid: bf18e522b88474f2ab6edb16ae4cf026
-  - enabled: 1
     path: Assets/_Scenes/ScreenLevelSelect.unity
     guid: 691626f53977a4d80af1f4987dcf7be9
   - enabled: 1
-    path: Assets/_Scenes/Examples/Example3.unity
-    guid: 527732e1825ef4c26994b1ce0bfa7fc4
+    path: Assets/_Scenes/Levels/Final/HypnosisFinal.unity
+    guid: e9dc2283df16a42e9ba0c49a1c99b5d9
   - enabled: 1
-    path: Assets/_Scenes/Examples/Example2.unity
-    guid: b79eb3541c903422ba6cfd30c3e574b2
+    path: Assets/_Scenes/Levels/Final/AnotherBrickFinal.unity
+    guid: c11d2110d48934f9891b163a3da89233
   - enabled: 1
-    path: Assets/_Scenes/Examples/Example1.unity
-    guid: ee3a059b656d9403bb67c931458e3a07
+    path: Assets/_Scenes/Levels/Final/RunFRunFinal.unity
+    guid: d1c29f81252744e5fb36496bc58bff89
   - enabled: 1
-    path: Assets/_Scenes/Examples/Dummy.unity
-    guid: 946c6d824201c4986b7a9a3fe56e1bc2
+    path: Assets/_Scenes/Levels/Final/HomeAloneFinal.unity
+    guid: 4dee0a62a44a24e0ea080cf8f9449eba
+  - enabled: 1
+    path: Assets/_Scenes/Levels/Final/FallingInLoveFinal.unity
+    guid: f986233340bdf4a4e993024fd7fd22a9
+  - enabled: 1
+    path: Assets/_Scenes/Levels/Final/RockNButtonsFinal.unity
+    guid: 7dd63fb4cb8bc4639932b506067a39e2
+  - enabled: 1
+    path: Assets/_Scenes/Levels/Final/CrazyDayFinal.unity
+    guid: f83f1149ef896479ba8c63529ed60060
+  - enabled: 1
+    path: Assets/_Scenes/Levels/Final/SecretButtonsFinal.unity
+    guid: 5970f6dcebfd1450e8c29c7c060f1102
+  - enabled: 1
+    path: Assets/_Scenes/Levels/Final/ChillinFinal.unity
+    guid: f0f94e7d1d7074913bc8701c11ee7524
+  - enabled: 1
+    path: Assets/_Scenes/Levels/Final/AsthmaPipeFinal.unity
+    guid: 2103839a448534423b79e91698232812

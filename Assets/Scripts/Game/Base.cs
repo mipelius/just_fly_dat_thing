@@ -5,11 +5,14 @@ using UnityEngine;
 public class Base : MonoBehaviour {
 
 	public GameObject playerToInstantiate;
-	public GameObject gamePlayToInstantiate;
+	public GameObject gamePlayToInstantiate = null;
 
 	void Awake () {
 		GameObject player = Instantiate (playerToInstantiate);
-		Instantiate(gamePlayToInstantiate);
+
+		if (gamePlayToInstantiate != null) {
+			Instantiate (gamePlayToInstantiate);
+		}
 
 		player.transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z + 90);
 

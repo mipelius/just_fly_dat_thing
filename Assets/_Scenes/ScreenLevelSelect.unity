@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 136907569}
   - component: {fileID: 136907568}
   m_Layer: 5
-  m_Name: LevelButton1 (3)
+  m_Name: LevelButton4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -887,7 +887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &211490370
 RectTransform:
   m_ObjectHideFlags: 0
@@ -962,7 +962,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 211490369}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e44490ce4f0ba49df94c1ddc28e3601e, type: 3}
   m_Name: 
@@ -1866,7 +1866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &343003082
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1941,7 +1941,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 343003081}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e44490ce4f0ba49df94c1ddc28e3601e, type: 3}
   m_Name: 
@@ -2271,7 +2271,7 @@ GameObject:
   - component: {fileID: 471099274}
   - component: {fileID: 471099273}
   m_Layer: 5
-  m_Name: LevelButton1 (8)
+  m_Name: LevelButton9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3130,7 +3130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &644192489
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3205,7 +3205,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 644192488}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e44490ce4f0ba49df94c1ddc28e3601e, type: 3}
   m_Name: 
@@ -3829,7 +3829,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &837082463
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3904,7 +3904,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 837082462}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e44490ce4f0ba49df94c1ddc28e3601e, type: 3}
   m_Name: 
@@ -4491,7 +4491,7 @@ GameObject:
   - component: {fileID: 951616116}
   - component: {fileID: 951616115}
   m_Layer: 5
-  m_Name: LevelButton1 (5)
+  m_Name: LevelButton6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4679,7 +4679,7 @@ GameObject:
   - component: {fileID: 992261662}
   - component: {fileID: 992261661}
   m_Layer: 5
-  m_Name: LevelButton1 (4)
+  m_Name: LevelButton5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5035,7 +5035,7 @@ GameObject:
   - component: {fileID: 1027982314}
   - component: {fileID: 1027982313}
   m_Layer: 5
-  m_Name: LevelButton1 (9)
+  m_Name: LevelButton10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5562,7 +5562,7 @@ GameObject:
   - component: {fileID: 1118513281}
   - component: {fileID: 1118513280}
   m_Layer: 5
-  m_Name: LevelButton1 (7)
+  m_Name: LevelButton8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6383,7 +6383,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1384056180
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6458,7 +6458,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1384056179}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e44490ce4f0ba49df94c1ddc28e3601e, type: 3}
   m_Name: 
@@ -7239,7 +7239,7 @@ GameObject:
   - component: {fileID: 1521184064}
   - component: {fileID: 1521184063}
   m_Layer: 5
-  m_Name: LevelButton1 (6)
+  m_Name: LevelButton7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9599,7 +9599,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2142594702
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9674,7 +9674,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2142594701}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e44490ce4f0ba49df94c1ddc28e3601e, type: 3}
   m_Name: 

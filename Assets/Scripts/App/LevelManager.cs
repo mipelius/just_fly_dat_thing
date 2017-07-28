@@ -15,24 +15,17 @@ public class LevelManager : MonoBehaviour {
 	private string scoreDataFilePath = "scores.json";
 
 	private Level[] levels = {
-		new Level(0, "Tutorial", "Tutorial", "levelY"),
-
-		new Level(1, "Dummy 1", "Dummy", "dummylevel1"),
-		new Level(2, "Dummy 2", "Dummy", "dummylevel2"),
-		new Level(3, "Dummy 3", "Dummy", "dummylevel3"),
-		new Level(4, "Dummy 4", "Dummy", "dummylevel4"),
-		new Level(5, "Dummy 5", "Dummy", "dummylevel5"),
-		new Level(6, "Dummy 6", "Dummy", "dummylevel6"),
-		new Level(7, "Dummy 7", "Dummy", "dummylevel7"),
-		new Level(8, "Dummy 8", "Dummy", "dummylevel8"),
-		new Level(9, "Dummy 9", "Dummy", "dummylevel9"),
-		new Level(10, "Dummy 10", "Dummy", "dummylevel10"),
-		new Level(11, "Dummy 11", "Dummy", "dummylevel11"),
-		new Level(12, "Dummy 12", "Dummy", "dummylevel12"),
-		new Level(13, "Dummy 13", "Dummy", "dummylevel13"),
-		new Level(14, "Rock\'N\'Buttons", "RockNButtons", "rocknbuttons"),
-		new Level(15, "Dummy 15", "Dummy", "dummylevel15"),
-		new Level(16, "Dummy 16", "Dummy", "dummylevel16"),
+		new Level (0, "Tutorial", "Tutorial", "AnotherBrick"),
+		new Level (1, "Chillin\'", "ChillinFinal", "Chillin"),
+		new Level (2, "Hypnosis", "HypnosisFinal", "Hypnosis"),
+		new Level (3, "Another Brick", "AnotherBrickFinal", "AnotherBrick"),
+		new Level (4, "Falling In Love", "FallingInLoveFinal", "FallingInLove"),
+		new Level (5, "Run F. Run", "RunFRunFinal", "RunFRun"),
+		new Level (6, "Home Alone", "HomeAloneFinal", "HomeAlone"),
+		new Level (7, "Asthma Pipe", "AsthmaPipeFinal", "AsthmaPipe"),
+		new Level (8, "Crazy Day", "CrazyDayFinal", "CrazyDay"),
+		new Level (9, "Secret Buttons", "SecretButtonsFinal", "SecretButtons"),
+		new Level (10, "Rock'N'Buttons", "RockNButtonsFinal", "RockNButtons")
 	};
 
 	private Level _currentLevel = null;
@@ -106,7 +99,7 @@ public class LevelManager : MonoBehaviour {
 
 	public int lastLevelNumber {
 		get {
-			return 16;	
+			return 10;	
 		}
 	}
 
