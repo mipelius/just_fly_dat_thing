@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
+	public AudioClip collisionClip;
+
+	public AudioSource accelerationAudioSource;
+
+	public GameObject rocketFireParticleSystem1;
+	public GameObject rocketFireParticleSystem2;
+
 	public float rotationVelocity;
 	public float accelerationForce;
 	public float damageThreshold;
@@ -22,11 +29,16 @@ public class Player : MonoBehaviour {
 
 	public GameObject explosion;
 
+	public GameObject bloodBurst;
+
 	private Rigidbody2D rb;
 	private PolygonCollider2D polygonCollider;
 	private SpriteRenderer spriteRenderer;
 
 	private bool isAlive = true;
+
+	private bool isAccelerating = false;
+	private bool stoppedAccelerating = true;
 
 	private bool isColliding = false;
 
@@ -40,7 +52,12 @@ public class Player : MonoBehaviour {
 	}
 
 	void FixedUpdate  () {
+		if (!isAlive) {
+			return;
+		}
+
 		if (Time.timeScale == 0) {
+			accelerationAudioSource.Stop ();
 			return;
 		}
 
@@ -78,7 +95,11 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update() {
+		if (!isAlive) {
+			return;
+		}
 		if (Time.timeScale == 0) {
+			accelerationAudioSource.Stop ();
 			return;
 		}
 
@@ -94,6 +115,9 @@ public class Player : MonoBehaviour {
 
 			spriteRenderer.enabled = false;
 			rb.simulated = false;
+
+			rocketFireParticleSystem1.SetActive (false);
+			rocketFireParticleSystem2.SetActive (false);
 
 			GameObject exp = Instantiate (explosion, transform.position, Quaternion.identity);
 			exp.transform.localScale *= 8;
@@ -114,6 +138,28 @@ public class Player : MonoBehaviour {
 	}
 
 	private void Accelerate (float accelerationInput) {
+		ParticleSystem system1 = rocketFireParticleSystem1.GetComponent<ParticleSystem> ();
+		ParticleSystem system2 = rocketFireParticleSystem2.GetComponent<ParticleSystem> ();
+
+		if (accelerationInput == 0) {
+			system1.Stop ();
+			system2.Stop ();
+
+			accelerationAudioSource.Stop ();
+
+			stoppedAccelerating = true;
+
+		} else {
+			if (stoppedAccelerating) {
+				system1.Play ();
+				system2.Play ();
+
+				accelerationAudioSource.Play ();
+
+				stoppedAccelerating = false;
+			}
+		}
+
 		float accAmount = accelerationInput * accelerationForce;
 
 		Vector2 force = NormalizedDirectionVector() * accAmount;
@@ -181,6 +227,7 @@ public class Player : MonoBehaviour {
 		float collisionMagnitude = collision.relativeVelocity.magnitude;
 
 		if (collisionMagnitude > damageThreshold) {
+			AudioManager.instance.PlaySingle (collisionClip);
 			ApplyDamage (damageFactor * collisionMagnitude);
 		}
 	}
@@ -201,6 +248,10 @@ public class Player : MonoBehaviour {
 
 	public void ApplyDamage(float amount) {
 		health -= amount;
+
+		GameObject currentBloodBurst = Instantiate (bloodBurst, transform.position, Quaternion.identity);
+		currentBloodBurst.transform.localScale *= 1 + (amount / 20);
+
 		if (health <= 0) {
 			health = 0;
 		}

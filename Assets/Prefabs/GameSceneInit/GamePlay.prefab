@@ -227,7 +227,6 @@ GameObject:
   - component: {fileID: 20064849779631168}
   - component: {fileID: 92888611504815104}
   - component: {fileID: 124417255657696664}
-  - component: {fileID: 81594249456970242}
   - component: {fileID: 114296984356743614}
   - component: {fileID: 114570721613253204}
   m_Layer: 8
@@ -833,13 +832,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1314152650493894}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!81 &81594249456970242
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1228902615498018}
-  m_Enabled: 1
 --- !u!92 &92888611504815104
 Behaviour:
   m_ObjectHideFlags: 1
@@ -1222,6 +1214,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerToFollow: {fileID: 0}
+  zoomInSize: 25
+  zoomOutSize: 80
+  zoomingRate: 150
 --- !u!114 &114328338644348768
 MonoBehaviour:
   m_ObjectHideFlags: 1

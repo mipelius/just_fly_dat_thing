@@ -20,13 +20,9 @@ public class GoldManager : MonoBehaviour {
 	}
 
 	void Update() {
-		if (golds.Count == 0) {
+		if (golds.Count <= 0) {
 			foreach (Exit exit in exits) {
-				exit.canUse = true; 
-			}
-		} else {
-			foreach (Exit exit in exits) {
-				exit.canUse = false; 
+				exit.SetOpen ();
 			}
 		}
 	}

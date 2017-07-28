@@ -4,29 +4,38 @@ using UnityEngine;
 
 public class Exit : MonoBehaviour {
 
-	public bool canUse = false;
+	public bool canUse;
 
-	public Sprite exitOpenSprite;
-	public Sprite exitClosedSprite;
-
-	private SpriteRenderer spriteRenderer;
+	public GameObject redEyeParticle;
+	public GameObject blueEyeParticle;
+	public GameObject exitShieldParticle;
 
 	void Start () {
 		GoldManager.instance.AddExit (this);
-		spriteRenderer = GetComponent<SpriteRenderer> ();
+
+		blueEyeParticle.GetComponent<ParticleSystem> ().Stop ();
+
+		canUse = false;
 	}
 
-	void Update() {
-		if (canUse) {
-			spriteRenderer.sprite = exitOpenSprite;
-		} else {
-			spriteRenderer.sprite = exitClosedSprite;
-		}
-
-	}
 	private void OnTriggerEnter2D (Collider2D other) {
 		if (other.tag == "Player" && canUse) {
 			UILevelManager.instance.LevelFinished ();
 		}			
+	}
+
+	public void SetOpen() {
+		if (canUse)
+			return;
+
+		exitShieldParticle.GetComponent<ParticleSystem> ().Stop ();
+		redEyeParticle.GetComponent<ParticleSystem> ().Stop ();
+		blueEyeParticle.GetComponent<ParticleSystem> ().Play ();
+
+		exitShieldParticle.GetComponent<Collider2D> ().enabled = false;
+
+		GetComponent<Collider2D> ().isTrigger = true;
+
+		canUse = true;
 	}
 }
