@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Exit : MonoBehaviour {
 
+	public AudioClip exitClip;
+
 	public bool canUse;
 
 	public GameObject redEyeParticle;
@@ -20,6 +22,7 @@ public class Exit : MonoBehaviour {
 
 	private void OnTriggerEnter2D (Collider2D other) {
 		if (other.tag == "Player" && canUse) {
+			AudioManager.instance.PlaySingle (exitClip, 0.4f);
 			UILevelManager.instance.LevelFinished ();
 		}			
 	}

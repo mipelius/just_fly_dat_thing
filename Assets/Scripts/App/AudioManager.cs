@@ -24,7 +24,7 @@ public class AudioManager : MonoBehaviour {
 		DontDestroyOnLoad (gameObject);
 	}
 
-	public void PlaySingle (AudioClip clip)
+	public void PlaySingle (AudioClip clip, float volume = 1.0f)
 	{
 		currentAudioSource++;
 		if (currentAudioSource >= audioSources.Count) {
@@ -32,6 +32,8 @@ public class AudioManager : MonoBehaviour {
 		}
 
 		AudioSource efxSource = audioSources [currentAudioSource];
+
+		efxSource.volume = volume;
 
 		efxSource.clip = clip;
 		efxSource.Play ();

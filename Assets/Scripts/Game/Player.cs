@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour {
 
 	public AudioClip collisionClip;
+	public AudioClip softcollisionClip;
+	public AudioClip bombDrop;
 
 	public AudioSource accelerationAudioSource;
 
@@ -18,8 +20,6 @@ public class Player : MonoBehaviour {
 	public float damageFactor;
 
 	public float customDrag;
-
-	public float velocityLimit;
 
 	public int bombs;
 
@@ -52,12 +52,7 @@ public class Player : MonoBehaviour {
 	}
 
 	void FixedUpdate  () {
-		if (!isAlive) {
-			return;
-		}
-
-		if (Time.timeScale == 0) {
-			accelerationAudioSource.Stop ();
+		if (UpdatesDisabled ()) {
 			return;
 		}
 
@@ -76,9 +71,6 @@ public class Player : MonoBehaviour {
 		float accelerationInput = Input.GetKey(KeyCode.UpArrow) ? 1 : 0;
 
 		Accelerate (accelerationInput);
-
-		//LimitVelocity ();
-
 		AddCustomDrag (customDrag);
 	}
 
@@ -86,20 +78,8 @@ public class Player : MonoBehaviour {
 		rb.AddForce (-rb.velocity.normalized * drag * rb.velocity.sqrMagnitude * rb.velocity.sqrMagnitude);
 	}
 
-	void LimitVelocity() {
-		float overSpeed = rb.velocity.magnitude - velocityLimit;
-
-		if (overSpeed > 0) {			
-			rb.AddForce (-rb.velocity.normalized * accelerationForce);
-		}
-	}
-
 	void Update() {
-		if (!isAlive) {
-			return;
-		}
-		if (Time.timeScale == 0) {
-			accelerationAudioSource.Stop ();
+		if (UpdatesDisabled ()) {
 			return;
 		}
 
@@ -177,6 +157,8 @@ public class Player : MonoBehaviour {
 	}
 
 	private void DropBomb() {
+		AudioManager.instance.PlaySingle (bombDrop);
+
 		float angle = (rb.rotation + 180) / 360 * 2 * Mathf.PI;
 
 		Vector2 transition = new Vector2 (
@@ -227,8 +209,17 @@ public class Player : MonoBehaviour {
 		float collisionMagnitude = collision.relativeVelocity.magnitude;
 
 		if (collisionMagnitude > damageThreshold) {
-			AudioManager.instance.PlaySingle (collisionClip);
+			AudioManager.instance.PlaySingle (
+				collisionClip, 
+				Mathf.Min(
+					0.1f + (collisionMagnitude - damageThreshold) / 20, 
+					1.0f
+				)
+			);
+
 			ApplyDamage (damageFactor * collisionMagnitude);
+		} else {
+			AudioManager.instance.PlaySingle (softcollisionClip, 0.1f);
 		}
 	}
 
@@ -254,6 +245,15 @@ public class Player : MonoBehaviour {
 
 		if (health <= 0) {
 			health = 0;
+		}
+	}
+
+	private bool UpdatesDisabled() {		
+		if (Time.timeScale == 0 || !isAlive) {
+			accelerationAudioSource.Stop ();
+			return true;
+		} else {
+			return false;
 		}
 	}
 }

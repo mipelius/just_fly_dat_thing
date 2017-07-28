@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9707bb0b1997c4b6cb40db216bc502b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldAudio: {fileID: 8300000, guid: 4c7b3e38be0864fb1ba9b6740f66b9ee, type: 3}
   angularVelocity: 100
 --- !u!212 &212539639801794508
 SpriteRenderer:

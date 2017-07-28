@@ -186,9 +186,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 08d84ae894296434dbff81921e965f45, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0838de0d87732430db5d2e3e485ce1a8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.299
   m_Pitch: -1.29
   Loop: 1
   Mute: 0
@@ -244,7 +244,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -269,6 +269,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionClip: {fileID: 8300000, guid: 0bb1ab80bcbe3480aacb53391665a40a, type: 3}
+  softcollisionClip: {fileID: 8300000, guid: ec6c9d100512b4c41bb69f760cb66e82, type: 3}
+  bombDrop: {fileID: 8300000, guid: a7b87dc1795ca4473a62e567d20bf7c5, type: 3}
   accelerationAudioSource: {fileID: 82721975551531448}
   rocketFireParticleSystem1: {fileID: 1752029972369376}
   rocketFireParticleSystem2: {fileID: 1265463978018794}
@@ -277,7 +279,6 @@ MonoBehaviour:
   damageThreshold: 10
   damageFactor: 1
   customDrag: 0.001
-  velocityLimit: 20
   bombs: 0
   health: 400
   bomb: {fileID: 1351820238977542, guid: c2f5bbf3df9fc422aaf9facabd8ce9f7, type: 2}

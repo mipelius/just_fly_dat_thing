@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Gold : MonoBehaviour {
 
+	public AudioClip goldAudio;
+
 	public float angularVelocity = 100;
 
 	private Rigidbody2D rb;
@@ -22,6 +24,7 @@ public class Gold : MonoBehaviour {
 				
 	private void OnTriggerEnter2D (Collider2D other) {
 		if (other.tag == "Player") {
+			AudioManager.instance.PlaySingle (goldAudio, 0.3f);
 			Destroy (gameObject);
 		}			
 	}
