@@ -25,12 +25,9 @@ public class Gold : MonoBehaviour {
 	private void OnTriggerEnter2D (Collider2D other) {
 		if (other.tag == "Player") {
 			AudioManager.instance.PlaySingle (goldAudio, 0.3f);
-			Destroy (gameObject);
+			gameObject.GetComponent<SpriteRenderer> ().enabled = false;
+			gameObject.GetComponent<Collider2D> ().enabled = false;
+			GoldManager.instance.RemoveGold (this);
 		}			
 	}
-
-	private void OnDestroy() {
-		GoldManager.instance.RemoveGold (this);
-	}
-
 }

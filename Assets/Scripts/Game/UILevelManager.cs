@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UILevelManager : MonoBehaviour {
+	public bool isTutorialMode;
+
 
 	public static UILevelManager instance = null;
 
@@ -101,6 +103,13 @@ public class UILevelManager : MonoBehaviour {
 	}
 
 	public void LevelFinished () {
+		if (isTutorialMode) {
+			UnityEngine.SceneManagement.SceneManager.LoadScene ("TutorialBasics");
+
+			// --> better handling for this...
+			return;
+		}
+
 		User user = UserManager.instance.currentUser;
 		Level level = LevelManager.instance.currentLevel;
 

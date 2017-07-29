@@ -10,9 +10,7 @@ public class Base : MonoBehaviour {
 	void Awake () {
 		GameObject player = Instantiate (playerToInstantiate);
 
-		if (gamePlayToInstantiate != null) {
-			Instantiate (gamePlayToInstantiate);
-		}
+		Instantiate (gamePlayToInstantiate);
 
 		player.transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z + 90);
 
