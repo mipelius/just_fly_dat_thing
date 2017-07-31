@@ -44,3 +44,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Levels/Final/AsthmaPipeFinal.unity
     guid: 2103839a448534423b79e91698232812
+  - enabled: 1
+    path: Assets/_Scenes/Levels/MiikaLevels/TutorialBasics.unity
+    guid: 58fd7e6452fb04d39a526b3383397a7b

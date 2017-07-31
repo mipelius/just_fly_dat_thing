@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class TutorialTrigger : MonoBehaviour {
 
-	public GameObject panel;
+	public GameObject[] panels;
 
 	private bool hasActivatedOnce = false;
 
 	void OnTriggerEnter2D(Collider2D collider) {
 		if (collider.tag == "Player" && !hasActivatedOnce) {
 			hasActivatedOnce = true;
-			panel.SetActive (true);
+
+			foreach (GameObject panel in panels) {
+				panel.SetActive (true);
+			}
 		}
-	}	
+	}
 
 	void OnTriggerExit2D(Collider2D collider) {
 		if (collider.tag == "Player") {
-			panel.SetActive (false);
+			foreach (GameObject panel in panels) {
+				panel.SetActive (false);
+			}
 		}
 	}
 }
