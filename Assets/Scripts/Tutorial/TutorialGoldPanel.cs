@@ -16,7 +16,7 @@ public class TutorialGoldPanel : MonoBehaviour {
 		string goldPanelTextStr = "";
 
 		if (count <= 0) {
-			goldPanelTextStr = "Great! Now go back and fly to the eye. The Eye is the exit of the level.";
+			goldPanelTextStr = "Great! Now fly to the eye. The Eye is the exit of the level.";
 		} else if (count == 1) {
 			goldPanelTextStr = "One more gold bar left!";
 		} else if (count == 3) {
