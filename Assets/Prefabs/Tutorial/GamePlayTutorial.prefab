@@ -965,7 +965,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Exit level
+  m_Text: Exit tutorial
 --- !u!114 &114634684147179418
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class TutorialGoldPanel : MonoBehaviour {
 	public GameObject goldPanelText;
-	public GameObject tutorialTriggerExit;
 
 	public GameObject statGoldArrow;
 
@@ -18,7 +17,6 @@ public class TutorialGoldPanel : MonoBehaviour {
 
 		if (count <= 0) {
 			goldPanelTextStr = "Great! Now go back and fly to the eye. The Eye is the exit of the level.";
-			tutorialTriggerExit.SetActive (true);
 		} else if (count == 1) {
 			goldPanelTextStr = "One more gold bar left!";
 		} else if (count == 3) {

@@ -47,3 +47,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Levels/MiikaLevels/TutorialBasics.unity
     guid: 58fd7e6452fb04d39a526b3383397a7b
+  - enabled: 1
+    path: Assets/_Scenes/Levels/MiikaLevels/TutorialDoors.unity
+    guid: fd3a85dd86b13487b9fd5eb35a98c7c3

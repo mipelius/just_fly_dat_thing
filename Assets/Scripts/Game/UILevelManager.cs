@@ -104,9 +104,13 @@ public class UILevelManager : MonoBehaviour {
 
 	public void LevelFinished () {
 		if (isTutorialMode) {
-			UnityEngine.SceneManagement.SceneManager.LoadScene ("TutorialBasics");
+			UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene ();
 
-			// --> better handling for this...
+			if (scene.name == "TutorialBasics")
+				UnityEngine.SceneManagement.SceneManager.LoadScene ("TutorialDoors");
+			else 
+				UnityEngine.SceneManagement.SceneManager.LoadScene ("TutorialBombsAndStuff");
+			
 			return;
 		}
 
