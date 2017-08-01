@@ -1,0 +1,10 @@
+Hei Miika! <3
+
+Kenttä: Tutorial2Ansku
+
+- TutorialTriggerIdea1 teksti vois olla esim. “There might come some obstacles in your way while flying. One type is doors. You can open and close them by pressing and releasing buttons.”
+- TutorialTriggerButton2 teksti: “You can open and close doors by pressing or releasing buttons of the same colour. Push the rock, and roll it over the buttons.”
+- TutorialTriggerEnd3 teksti: “Remember that both pressing and releasing can open or close doors.”
+
+
+PS. Tän tiedostonimen voi muuttaa :D
