@@ -1,10 +1,25 @@
 Hei Miika! <3
 
-Kenttä: Tutorial2Ansku
+Kenttä: Tutorial2Ansku (ovet)
 
 - TutorialTriggerIdea1 teksti vois olla esim. “There might come some obstacles in your way while flying. One type is doors. You can open and close them by pressing and releasing buttons.”
-- TutorialTriggerButton2 teksti: “You can open and close doors by pressing or releasing buttons of the same colour. Push the rock, and roll it over the buttons.”
-- TutorialTriggerEnd3 teksti: “Remember that both pressing and releasing can open or close doors.”
 
+- TutorialTriggerButton2 teksti: “You can open and close doors by pressing or releasing buttons of the same colour. Push the rock, and roll it over the buttons.”
+
+- TutorialTriggerSize3 teksti: “Both doors and buttons can have various sizes.”
+
+- TutorialTriggerEnd4 teksti: “Remember that both pressing and releasing can open or close doors.”
+
+
+
+Kenttä: Tutorial3Bansku (loput)
+
+- TutorialTriggerTab1: “Press TAB to zoom out for a bigger view of the map. Press TAB again to zoom back in.”
+
+- TutorialTriggerBlocks2: “Sometimes there’s red blocks in your way. You can try to move them by flying, but usually that just hurts your spaceship. Better idea is to use bombs. Fly upwards to find some.”
+
+- TutorialTriggerBombs3: “Pick up bomb boxes from the shelf by flying through them. You can see the amount of bombs you have from (nuoli). Press SPACE to drop the bomb. Remember, that if you fly forward and drop the bomb, it will continue the same way you go. The bomb moves blocks, rocks and makes damage to your spaceship.”
+
+Luultavasti kannattaa tehdä semmonen jälkikäteen triggeröityvä tuohon Blocks2:n kohdalle, jossa selittää sen pommien lentoidean…
 
 PS. Tän tiedostonimen voi muuttaa :D
