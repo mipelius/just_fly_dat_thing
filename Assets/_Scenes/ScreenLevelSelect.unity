@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 136907569}
   - component: {fileID: 136907568}
   m_Layer: 5
-  m_Name: LevelButton4
+  m_Name: LevelButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -635,7 +635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disabledPanel: {fileID: 1257079252}
-  levelNumber: 4
+  levelNumber: 3
   levelNameText: {fileID: 528514562}
   levelImage: {fileID: 17466454}
 --- !u!114 &136907570
@@ -1333,6 +1333,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &265230566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 265230567}
+  - component: {fileID: 265230569}
+  - component: {fileID: 265230568}
+  m_Layer: 5
+  m_Name: TutorialInfoText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &265230567
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 265230566}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 306736687}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -20}
+  m_SizeDelta: {x: 0, y: -20}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &265230568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 265230566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Play the tutorial to learn the basics of the game!
+--- !u!222 &265230569
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 265230566}
 --- !u!1 &292243695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,6 +1577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f678b9f71f84951b1fc1693f559d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialPanel: {fileID: 306736686}
   levelInfoPanel: {fileID: 861442402}
   levelNumberTextObj: {fileID: 490826248}
   levelNameTextObj: {fileID: 2035305854}
@@ -1582,6 +1657,75 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 306703728}
+--- !u!1 &306736686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 306736687}
+  - component: {fileID: 306736689}
+  - component: {fileID: 306736688}
+  m_Layer: 5
+  m_Name: TutorialInfo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &306736687
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 306736686}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 265230567}
+  m_Father: {fileID: 775981237}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 365, y: -41.640015}
+  m_SizeDelta: {x: -750, y: -112}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &306736688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 306736686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7607843, g: 0.7607843, b: 0.7607843, a: 0.19607843}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &306736689
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 306736686}
 --- !u!1 &326717866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,7 +1756,7 @@ RectTransform:
   m_Children:
   - {fileID: 1400744167}
   m_Father: {fileID: 775981237}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2271,7 +2415,7 @@ GameObject:
   - component: {fileID: 471099274}
   - component: {fileID: 471099273}
   m_Layer: 5
-  m_Name: LevelButton9
+  m_Name: LevelButton8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2357,7 +2501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disabledPanel: {fileID: 24369551}
-  levelNumber: 9
+  levelNumber: 8
   levelNameText: {fileID: 1097770998}
   levelImage: {fileID: 1378290862}
 --- !u!114 &471099275
@@ -3618,6 +3762,7 @@ RectTransform:
   - {fileID: 299457595}
   - {fileID: 1775780545}
   - {fileID: 1543972235}
+  - {fileID: 306736687}
   - {fileID: 861442403}
   - {fileID: 1527936596}
   - {fileID: 326717867}
@@ -4032,7 +4177,7 @@ RectTransform:
   - {fileID: 173917458}
   - {fileID: 1498834060}
   m_Father: {fileID: 775981237}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4229,7 +4374,7 @@ GameObject:
   - component: {fileID: 905691050}
   - component: {fileID: 905691051}
   m_Layer: 5
-  m_Name: LevelButton1
+  m_Name: LevelButton0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4353,7 +4498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disabledPanel: {fileID: 2067924004}
-  levelNumber: 1
+  levelNumber: 0
   levelNameText: {fileID: 730882846}
   levelImage: {fileID: 1144206688}
 --- !u!114 &905691051
@@ -4491,7 +4636,7 @@ GameObject:
   - component: {fileID: 951616116}
   - component: {fileID: 951616115}
   m_Layer: 5
-  m_Name: LevelButton6
+  m_Name: LevelButton5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4577,7 +4722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disabledPanel: {fileID: 2039933287}
-  levelNumber: 6
+  levelNumber: 5
   levelNameText: {fileID: 1941795599}
   levelImage: {fileID: 1929263848}
 --- !u!114 &951616117
@@ -4679,7 +4824,7 @@ GameObject:
   - component: {fileID: 992261662}
   - component: {fileID: 992261661}
   m_Layer: 5
-  m_Name: LevelButton5
+  m_Name: LevelButton4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4765,7 +4910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disabledPanel: {fileID: 1963050135}
-  levelNumber: 5
+  levelNumber: 4
   levelNameText: {fileID: 292243695}
   levelImage: {fileID: 1832707123}
 --- !u!114 &992261663
@@ -5035,7 +5180,7 @@ GameObject:
   - component: {fileID: 1027982314}
   - component: {fileID: 1027982313}
   m_Layer: 5
-  m_Name: LevelButton10
+  m_Name: LevelButton9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5121,7 +5266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disabledPanel: {fileID: 492160803}
-  levelNumber: 10
+  levelNumber: 9
   levelNameText: {fileID: 2060790349}
   levelImage: {fileID: 1353443766}
 --- !u!114 &1027982315
@@ -5562,7 +5707,7 @@ GameObject:
   - component: {fileID: 1118513281}
   - component: {fileID: 1118513280}
   m_Layer: 5
-  m_Name: LevelButton8
+  m_Name: LevelButton7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5648,7 +5793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disabledPanel: {fileID: 1771848847}
-  levelNumber: 8
+  levelNumber: 7
   levelNameText: {fileID: 1651405626}
   levelImage: {fileID: 1576603485}
 --- !u!114 &1118513282
@@ -6378,12 +6523,12 @@ GameObject:
   - component: {fileID: 1384056182}
   - component: {fileID: 1384056181}
   m_Layer: 5
-  m_Name: LevelButton1 (10)
+  m_Name: LevelButton10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1384056180
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6458,13 +6603,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1384056179}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e44490ce4f0ba49df94c1ddc28e3601e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disabledPanel: {fileID: 882709729}
-  levelNumber: 11
+  levelNumber: 10
   levelNameText: {fileID: 2030474913}
   levelImage: {fileID: 1847572497}
 --- !u!114 &1384056183
@@ -6762,7 +6907,7 @@ GameObject:
   - component: {fileID: 1427859868}
   - component: {fileID: 1427859867}
   m_Layer: 5
-  m_Name: LevelButton2
+  m_Name: LevelButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6848,7 +6993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disabledPanel: {fileID: 330816024}
-  levelNumber: 2
+  levelNumber: 1
   levelNameText: {fileID: 1337556942}
   levelImage: {fileID: 1510818900}
 --- !u!114 &1427859869
@@ -7239,7 +7384,7 @@ GameObject:
   - component: {fileID: 1521184064}
   - component: {fileID: 1521184063}
   m_Layer: 5
-  m_Name: LevelButton7
+  m_Name: LevelButton6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7325,7 +7470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disabledPanel: {fileID: 1552865553}
-  levelNumber: 7
+  levelNumber: 6
   levelNameText: {fileID: 1444654850}
   levelImage: {fileID: 1307084313}
 --- !u!114 &1521184065
@@ -7443,7 +7588,7 @@ RectTransform:
   m_Children:
   - {fileID: 149756945}
   m_Father: {fileID: 775981237}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -8471,7 +8616,7 @@ GameObject:
   - component: {fileID: 1865368013}
   - component: {fileID: 1865368012}
   m_Layer: 5
-  m_Name: LevelButton3
+  m_Name: LevelButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8557,7 +8702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disabledPanel: {fileID: 2064761201}
-  levelNumber: 3
+  levelNumber: 2
   levelNameText: {fileID: 667801541}
   levelImage: {fileID: 1736298623}
 --- !u!114 &1865368014

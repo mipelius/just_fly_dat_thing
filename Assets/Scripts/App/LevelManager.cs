@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour {
 	private string scoreDataFilePath = "scores.json";
 
 	private Level[] levels = {
-		new Level (0, "Tutorial", "Tutorial", "AnotherBrick"),
+		new Level (0, "Tutorial", "TutorialBasics", "tutorial"),
 		new Level (1, "Chillin\'", "ChillinFinal", "Chillin"),
 		new Level (2, "Hypnosis", "HypnosisFinal", "Hypnosis"),
 		new Level (3, "Another Brick", "AnotherBrickFinal", "AnotherBrick"),

@@ -32,7 +32,6 @@ public class Player : MonoBehaviour {
 	public GameObject bloodBurst;
 
 	private Rigidbody2D rb;
-	private PolygonCollider2D polygonCollider;
 	private SpriteRenderer spriteRenderer;
 
 	private bool isAlive = true;
@@ -45,7 +44,6 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
-		polygonCollider = GetComponent<PolygonCollider2D> ();
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 
 		UILevelManager.instance.SetPlayer (this);
@@ -168,13 +166,16 @@ public class Player : MonoBehaviour {
 
 		transition *= 1.2f;
 
-		this.polygonCollider.enabled = false;
-		RaycastHit2D hit = Physics2D.Linecast (rb.position, rb.position + transition);
-		this.polygonCollider.enabled = true;
+		// Check if there is wall or other obstacles in the way. 
+		// => Move the spaceship just a little if there is no room for a new bomb 
 
-		if (hit.transform != null) {
+		RaycastHit2D hit = Physics2D.Linecast (rb.position, rb.position + transition, 0, -3, 0);
+
+		if (hit.transform != null) {			
 			rb.position = rb.position - transition / 3;
 		}
+
+		// ---------------
 
 		Vector2 position = rb.position + transition * 1f;
 

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class UILevelManager : MonoBehaviour {
 	public bool isTutorialMode;
 
-
 	public static UILevelManager instance = null;
 
 	public RectTransform healthBar;
@@ -28,7 +27,7 @@ public class UILevelManager : MonoBehaviour {
 		if (instance == null) {
 			instance = this;
 
-			bombPanel.SetActive (false);
+			bombPanel.SetActive (true);
 			goldPanel.SetActive (false);
 			exitPanel.SetActive (false);
 
@@ -51,15 +50,9 @@ public class UILevelManager : MonoBehaviour {
 		}
 	}
 
-	private void UpdateBombsUI() {
-		if (player.bombs > 0) {
-			bombPanel.SetActive (true);
-			Text text = bombPanelText.GetComponent<Text> ();
-			text.text = player.bombs.ToString ();
-
-		} else {
-			bombPanel.SetActive (false);
-		}
+	private void UpdateBombsUI() {		
+		Text text = bombPanelText.GetComponent<Text> ();
+		text.text = player.bombs.ToString ();
 	}
 
 	private void UpdateGoldUI() {
@@ -108,9 +101,13 @@ public class UILevelManager : MonoBehaviour {
 
 			if (scene.name == "TutorialBasics")
 				UnityEngine.SceneManagement.SceneManager.LoadScene ("TutorialDoors");
-			else 
+			else if (scene.name == "TutorialDoors")
 				UnityEngine.SceneManagement.SceneManager.LoadScene ("TutorialBombsAndStuff");
-			
+			else {
+				TutorialFinishedPanel tutorialPanel = gameObject.GetComponent<TutorialFinishedPanel> ();
+				tutorialPanel.Show (CalculateScore ());
+			}
+
 			return;
 		}
 

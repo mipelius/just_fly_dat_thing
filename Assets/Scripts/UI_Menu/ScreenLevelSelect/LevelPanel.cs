@@ -7,8 +7,9 @@ public class LevelPanel : MonoBehaviour {
 
 	public static LevelPanel instance; 
 
-	public GameObject levelInfoPanel;
+	public GameObject tutorialPanel;
 
+	public GameObject levelInfoPanel;
 	public GameObject levelNumberTextObj;
 	public GameObject levelNameTextObj;
 	public GameObject yourScoreTextObj;
@@ -50,6 +51,11 @@ public class LevelPanel : MonoBehaviour {
 	}
 
 	public void ShowLevelInfo(int levelNumber) {
+		if (levelNumber == 0) {
+			tutorialPanel.SetActive (true);
+			return;
+		}
+
 		User user = UserManager.instance.currentUser;
 		Level level = LevelManager.instance.GetLevel (levelNumber);
 
@@ -88,6 +94,7 @@ public class LevelPanel : MonoBehaviour {
 	}
 
 	public void HideLevelInfo() {
+		tutorialPanel.SetActive (false);
 		levelInfoPanel.SetActive (false);
 	}
 

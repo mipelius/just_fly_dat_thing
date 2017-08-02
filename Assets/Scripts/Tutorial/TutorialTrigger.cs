@@ -9,7 +9,7 @@ public class TutorialTrigger : MonoBehaviour {
 	private bool hasActivatedOnce = false;
 
 	void OnTriggerEnter2D(Collider2D collider) {
-		if (collider.tag == "Player" && !hasActivatedOnce) {
+		if (collider.tag.Equals("Player") && !hasActivatedOnce) {
 			hasActivatedOnce = true;
 
 			foreach (GameObject panel in panels) {
@@ -19,7 +19,7 @@ public class TutorialTrigger : MonoBehaviour {
 	}
 
 	void OnTriggerExit2D(Collider2D collider) {
-		if (collider.tag == "Player") {
+		if (collider.tag.Equals("Player")) {
 			foreach (GameObject panel in panels) {
 				panel.SetActive (false);
 			}
