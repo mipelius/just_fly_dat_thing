@@ -14,6 +14,8 @@ public class TutorialFinishedPanel : MonoBehaviour {
 	}
 
 	public void Show(int score) {
+		Cursor.visible = true;
+
 		User user = UserManager.instance.currentUser;
 		Level level = LevelManager.instance.currentLevel;
 

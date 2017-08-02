@@ -23,6 +23,8 @@ public class UILevelManager : MonoBehaviour {
 
 	private float awakeTimeStamp;
 
+	private bool isLevelFinished;
+
 	void Awake () {
 		if (instance == null) {
 			instance = this;
@@ -32,6 +34,8 @@ public class UILevelManager : MonoBehaviour {
 			exitPanel.SetActive (false);
 
 			awakeTimeStamp = Time.time;
+
+			isLevelFinished = false;
 		}
 		else if (instance != this)
 			Destroy(gameObject);
@@ -96,6 +100,8 @@ public class UILevelManager : MonoBehaviour {
 	}
 
 	public void LevelFinished () {
+		isLevelFinished = true;
+
 		if (isTutorialMode) {
 			UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene ();
 
@@ -135,6 +141,12 @@ public class UILevelManager : MonoBehaviour {
 
 		LevelFinishedPanel panel = gameObject.GetComponent<LevelFinishedPanel> ();
 		panel.Show (CalculateScore());
+	}
+
+	public bool levelFinished {
+		get {
+			return isLevelFinished;
+		}
 	}
 
 	public int CalculateScore() {

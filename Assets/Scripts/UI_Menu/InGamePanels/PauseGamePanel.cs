@@ -7,17 +7,24 @@ public class PauseGamePanel : MonoBehaviour {
 	public GameObject pauseGamePanel;
 
 	void Awake() {
+		Cursor.visible = false;
 		Time.timeScale = 1;
 	}
 
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
+			if (UILevelManager.instance.levelFinished) {
+				return;
+			}
+
 			bool isActive = pauseGamePanel.activeSelf;
 
 			if (!isActive) {
 				Time.timeScale = 0;
+				Cursor.visible = true;
 			} else {
 				Time.timeScale = 1;
+				Cursor.visible = false;
 			}
 
 			pauseGamePanel.SetActive (!isActive);
@@ -30,6 +37,7 @@ public class PauseGamePanel : MonoBehaviour {
 	}
 
 	public void RestartClicked() {
+		Cursor.visible = false;
 		Time.timeScale = 1;	
 		UILevelManager.instance.Restart ();
 	}
