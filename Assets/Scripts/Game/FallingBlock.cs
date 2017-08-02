@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FallingBlock : MonoBehaviour {
-	
+
+	public AudioClip fallingBlockExplosionAudio;
+	public AudioClip playerDamageAudio;
+
 	public GameObject fallingBlockExplosion;
 
 	public float damage;
@@ -44,6 +47,16 @@ public class FallingBlock : MonoBehaviour {
 
 		if (collision.gameObject.tag == "Player") {
 			collision.gameObject.SendMessage ("ApplyDamage", damage);
+			AudioManager.instance.PlaySingle (playerDamageAudio);
+		}
+
+		GameObject camera = GameObject.Find("Main Camera");
+		Vector2 distanceVector = new Vector2 (
+			                         transform.position.x - camera.transform.position.x,
+			                         transform.position.y - camera.transform.position.y
+		                         );
+		if (distanceVector.magnitude < 20) {
+			AudioManager.instance.PlaySingle (fallingBlockExplosionAudio);
 		}
 
 		Explode ();

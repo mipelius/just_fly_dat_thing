@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour {
 
 	public static AudioManager instance = null;
 
-	private int countOfEfxPlayers = 12;
+	private int countOfEfxPlayers = 30;
 
 	private List<AudioSource> audioSources;
 
